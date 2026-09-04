@@ -1,0 +1,103 @@
+{
+  "experiment": "q1_1_localization_validation",
+  "seed": 20220904,
+  "noise_model": "independent Gaussian perturbation of each pairwise angle",
+  "noise_std_deg": 0.1,
+  "trials_per_receiver": 200,
+  "configurations": [
+    {
+      "gap_deg": 40,
+      "transmitters": "FY00-FY01-FY02",
+      "receiver_count": 7,
+      "exact_max_error_m": 4.5379522718071336e-10,
+      "ideal_worst_sigma_min_per_m": 0.0006407602708526044,
+      "table_worst_sigma_min_per_m": 0.0005387284363395286,
+      "table_median_sigma_min_per_m": 0.0010827271546338126,
+      "noise_std_deg": 0.1,
+      "noise_trials_per_receiver": 200,
+      "noise_sample_count": 1400,
+      "noise_median_error_m": 0.5740673317328314,
+      "noise_p95_error_m": 1.5486974752068496,
+      "noise_max_error_m": 2.82673378184159,
+      "noise_solver_failures": 0
+    },
+    {
+      "gap_deg": 80,
+      "transmitters": "FY00-FY01-FY03",
+      "receiver_count": 7,
+      "exact_max_error_m": 3.36248762289194e-10,
+      "ideal_worst_sigma_min_per_m": 0.001994941372616711,
+      "table_worst_sigma_min_per_m": 0.001636094818889924,
+      "table_median_sigma_min_per_m": 0.0020912073901365675,
+      "noise_std_deg": 0.1,
+      "noise_trials_per_receiver": 200,
+      "noise_sample_count": 1400,
+      "noise_median_error_m": 0.3384728715505686,
+      "noise_p95_error_m": 1.0023830849081055,
+      "noise_max_error_m": 1.9401250729865314,
+      "noise_solver_failures": 0
+    },
+    {
+      "gap_deg": 120,
+      "transmitters": "FY00-FY01-FY04",
+      "receiver_count": 7,
+      "exact_max_error_m": 2.750894222962969e-10,
+      "ideal_worst_sigma_min_per_m": 0.0030018624087352263,
+      "table_worst_sigma_min_per_m": 0.002418201974812795,
+      "table_median_sigma_min_per_m": 0.003177920948000468,
+      "noise_std_deg": 0.1,
+      "noise_trials_per_receiver": 200,
+      "noise_sample_count": 1400,
+      "noise_median_error_m": 0.3166950288293226,
+      "noise_p95_error_m": 0.9117210327400374,
+      "noise_max_error_m": 1.456246730181633,
+      "noise_solver_failures": 0
+    },
+    {
+      "gap_deg": 160,
+      "transmitters": "FY00-FY01-FY05",
+      "receiver_count": 7,
+      "exact_max_error_m": 5.463628768851559e-10,
+      "ideal_worst_sigma_min_per_m": 0.003562392887349157,
+      "table_worst_sigma_min_per_m": 0.002784561533604997,
+      "table_median_sigma_min_per_m": 0.003931437026510625,
+      "noise_std_deg": 0.1,
+      "noise_trials_per_receiver": 200,
+      "noise_sample_count": 1400,
+      "noise_median_error_m": 0.28215353745898586,
+      "noise_p95_error_m": 0.8238083914656193,
+      "noise_max_error_m": 2.0085384570205593,
+      "noise_solver_failures": 0
+    }
+  ],
+  "ambiguity_example": {
+    "transmitters": "FY00-FY01-FY05",
+    "receiver": "FY03",
+    "candidate_count": 2,
+    "candidates": [
+      {
+        "x_m": -13.6159258996644,
+        "y_m": -76.06142504914435,
+        "residual_norm": 1.3092278833360675e-16,
+        "distance_to_nominal_m": 177.27037592690874
+      },
+      {
+        "x_m": 19.04420117056013,
+        "y_m": 110.36901015128856,
+        "residual_norm": 1.6653345369377348e-16,
+        "distance_to_nominal_m": 12.00626738281094
+      }
+    ],
+    "selection_rule": "minimum distance to the known receiver's ideal position",
+    "selected_candidate": {
+      "x_m": 19.04420117056013,
+      "y_m": 110.36901015128856,
+      "residual_norm": 1.6653345369377348e-16,
+      "distance_to_nominal_m": 12.00626738281094
+    },
+    "true_position_m": [
+      19.044201170560154,
+      110.36901015128855
+    ]
+  }
+}
