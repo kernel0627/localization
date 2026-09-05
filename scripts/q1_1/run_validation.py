@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Run deterministic exact and noisy validation for Question 1(1)."""
+"""Run exhaustive exact and noisy validation for Question 1(1)."""
 
 from __future__ import annotations
 
 import argparse
 import csv
 import json
+from itertools import combinations
 from pathlib import Path
 
 import numpy as np
@@ -33,36 +34,50 @@ INITIAL_POLAR = {
     9: (112.0, 320.28),
 }
 
-REPRESENTATIVE_CONFIGS = (
-    (40, (0, 1, 2)),
-    (80, (0, 1, 3)),
-    (120, (0, 1, 4)),
-    (160, (0, 1, 5)),
-)
-
 
 def actual_position(drone_id: int) -> np.ndarray:
     radius, angle = INITIAL_POLAR[drone_id]
     return polar_to_cartesian(radius, angle)
 
 
+def circular_gap_deg(first_id: int, second_id: int) -> int:
+    index_gap = abs(first_id - second_id)
+    return 40 * min(index_gap, 9 - index_gap)
+
+
 def percentile(values: list[float], q: float) -> float:
     return float(np.percentile(np.asarray(values, dtype=float), q))
 
 
-def run_validation(noise_std_deg: float, trials: int, seed: int) -> tuple[list[dict], list[dict]]:
+def run_validation(
+    noise_std_deg: float,
+    trials: int,
+    seed: int,
+) -> tuple[list[dict], list[dict], list[dict]]:
     rng = np.random.default_rng(seed)
     exact_rows: list[dict] = []
-    summary_rows: list[dict] = []
+    configuration_rows: list[dict] = []
+    grouped: dict[int, dict[str, list | int]] = {
+        gap: {
+            "exact_errors": [],
+            "ideal_sigma_mins": [],
+            "table_sigma_mins": [],
+            "noisy_errors": [],
+            "noise_solver_failures": 0,
+        }
+        for gap in (40, 80, 120, 160)
+    }
 
-    for gap_deg, transmitter_ids in REPRESENTATIVE_CONFIGS:
+    for first_id, second_id in combinations(range(1, 10), 2):
+        gap_deg = circular_gap_deg(first_id, second_id)
+        transmitter_ids = (0, first_id, second_id)
         anchors = np.vstack([fy_position(drone_id) for drone_id in transmitter_ids])
         receiver_ids = [
             drone_id for drone_id in range(1, 10) if drone_id not in transmitter_ids
         ]
         exact_errors: list[float] = []
-        sigma_mins: list[float] = []
         ideal_sigma_mins: list[float] = []
+        table_sigma_mins: list[float] = []
         noisy_errors: list[float] = []
         noisy_failures = 0
 
@@ -72,25 +87,26 @@ def run_validation(noise_std_deg: float, trials: int, seed: int) -> tuple[list[d
             initial = fy_position(receiver_id)
             result = localize_receiver(anchors, observed, initial)
             error = float(np.linalg.norm(result.position - truth))
-            singular_values = local_observability(truth, anchors)
-            sigma_min = float(singular_values[-1])
+            table_sigma_min = float(local_observability(truth, anchors)[-1])
             ideal_sigma_min = float(local_observability(initial, anchors)[-1])
             exact_errors.append(error)
-            sigma_mins.append(sigma_min)
+            table_sigma_mins.append(table_sigma_min)
             ideal_sigma_mins.append(ideal_sigma_min)
             exact_rows.append(
                 {
                     "gap_deg": gap_deg,
-                    "transmitters": "-".join(f"FY{x:02d}" for x in transmitter_ids),
+                    "transmitters": "-".join(
+                        f"FY{x:02d}" for x in transmitter_ids
+                    ),
                     "receiver": f"FY{receiver_id:02d}",
                     "true_x_m": float(truth[0]),
                     "true_y_m": float(truth[1]),
                     "estimate_x_m": float(result.position[0]),
                     "estimate_y_m": float(result.position[1]),
                     "position_error_m": error,
-                    "residual_norm": result.residual_norm,
-                    "sigma_min_per_m": sigma_min,
-                    "condition_number": result.condition_number,
+                    "angle_residual_norm_rad": result.residual_norm,
+                    "angle_sigma_min_per_m": table_sigma_min,
+                    "angle_jacobian_condition_number": result.condition_number,
                 }
             )
 
@@ -108,15 +124,16 @@ def run_validation(noise_std_deg: float, trials: int, seed: int) -> tuple[list[d
                     float(np.linalg.norm(noisy_result.position - truth))
                 )
 
-        summary_rows.append(
+        configuration_rows.append(
             {
                 "gap_deg": gap_deg,
-                "transmitters": "-".join(f"FY{x:02d}" for x in transmitter_ids),
+                "transmitters": "-".join(
+                    f"FY{x:02d}" for x in transmitter_ids
+                ),
                 "receiver_count": len(receiver_ids),
                 "exact_max_error_m": max(exact_errors),
-                "ideal_worst_sigma_min_per_m": min(ideal_sigma_mins),
-                "table_worst_sigma_min_per_m": min(sigma_mins),
-                "table_median_sigma_min_per_m": float(np.median(sigma_mins)),
+                "ideal_worst_angle_sigma_min_per_m": min(ideal_sigma_mins),
+                "table_worst_angle_sigma_min_per_m": min(table_sigma_mins),
                 "noise_std_deg": noise_std_deg,
                 "noise_trials_per_receiver": trials,
                 "noise_sample_count": len(noisy_errors),
@@ -127,10 +144,41 @@ def run_validation(noise_std_deg: float, trials: int, seed: int) -> tuple[list[d
             }
         )
 
-    return exact_rows, summary_rows
+        group = grouped[gap_deg]
+        group["exact_errors"].extend(exact_errors)
+        group["ideal_sigma_mins"].extend(ideal_sigma_mins)
+        group["table_sigma_mins"].extend(table_sigma_mins)
+        group["noisy_errors"].extend(noisy_errors)
+        group["noise_solver_failures"] += noisy_failures
+
+    gap_rows: list[dict] = []
+    for gap_deg, group in grouped.items():
+        exact_errors = group["exact_errors"]
+        ideal_sigma_mins = group["ideal_sigma_mins"]
+        table_sigma_mins = group["table_sigma_mins"]
+        noisy_errors = group["noisy_errors"]
+        gap_rows.append(
+            {
+                "gap_deg": gap_deg,
+                "circular_pair_count": 9,
+                "receiver_case_count": len(exact_errors),
+                "exact_max_error_m": max(exact_errors),
+                "ideal_worst_angle_sigma_min_per_m": min(ideal_sigma_mins),
+                "table_worst_angle_sigma_min_per_m": min(table_sigma_mins),
+                "noise_std_deg": noise_std_deg,
+                "noise_trials_per_case": trials,
+                "noise_sample_count": len(noisy_errors),
+                "noise_median_error_m": float(np.median(noisy_errors)),
+                "noise_p95_error_m": percentile(noisy_errors, 95),
+                "noise_max_error_m": max(noisy_errors),
+                "noise_solver_failures": group["noise_solver_failures"],
+            }
+        )
+
+    return exact_rows, configuration_rows, gap_rows
 
 
-def ambiguity_example() -> dict:
+def multistart_candidate_check() -> dict:
     transmitter_ids = (0, 1, 5)
     anchors = np.vstack([fy_position(drone_id) for drone_id in transmitter_ids])
     receiver_id = 3
@@ -149,7 +197,7 @@ def ambiguity_example() -> dict:
         {
             "x_m": float(candidate.position[0]),
             "y_m": float(candidate.position[1]),
-            "residual_norm": candidate.residual_norm,
+            "angle_residual_norm_rad": candidate.residual_norm,
             "distance_to_nominal_m": float(
                 np.linalg.norm(candidate.position - nominal)
             ),
@@ -160,11 +208,13 @@ def ambiguity_example() -> dict:
     return {
         "transmitters": "FY00-FY01-FY05",
         "receiver": "FY03",
-        "candidate_count": len(candidate_rows),
+        "start_count": len(starts),
+        "found_candidate_count": len(candidate_rows),
         "candidates": candidate_rows,
         "selection_rule": "minimum distance to the known receiver's ideal position",
         "selected_candidate": selected,
         "true_position_m": [float(truth[0]), float(truth[1])],
+        "claim_boundary": "the checked starts find at least two zero-residual candidates",
     }
 
 
@@ -190,23 +240,31 @@ def main() -> None:
     if args.trials < 1:
         parser.error("--trials must be positive")
 
-    exact_rows, summary_rows = run_validation(
+    exact_rows, configuration_rows, gap_rows = run_validation(
         args.noise_std_deg, args.trials, args.seed
     )
     args.output.mkdir(parents=True, exist_ok=True)
     write_csv(args.output / "exact_cases.csv", exact_rows)
-    write_csv(args.output / "noise_summary.csv", summary_rows)
-    ambiguity = ambiguity_example()
+    write_csv(args.output / "configuration_summary.csv", configuration_rows)
+    write_csv(args.output / "gap_summary.csv", gap_rows)
+    candidate_check = multistart_candidate_check()
     (args.output / "summary.json").write_text(
         json.dumps(
             {
                 "experiment": "q1_1_localization_validation",
+                "residual_model": "predicted minus observed pairwise angle in radians",
                 "seed": args.seed,
                 "noise_model": "independent Gaussian perturbation of each pairwise angle",
                 "noise_std_deg": args.noise_std_deg,
-                "trials_per_receiver": args.trials,
-                "configurations": summary_rows,
-                "ambiguity_example": ambiguity,
+                "trials_per_receiver_case": args.trials,
+                "circular_transmitter_pair_count": len(configuration_rows),
+                "exact_receiver_case_count": len(exact_rows),
+                "noise_sample_count": sum(
+                    row["noise_sample_count"] for row in gap_rows
+                ),
+                "configurations": configuration_rows,
+                "gap_summaries": gap_rows,
+                "multistart_candidate_check": candidate_check,
             },
             ensure_ascii=False,
             indent=2,
@@ -216,25 +274,27 @@ def main() -> None:
     )
 
     print(
-        "gap  receivers  exact_max(m)  ideal_sigma_min(1/m)  "
-        "table_sigma_min(1/m)  "
-        "noise_median(m)  noise_p95(m)  failures"
+        "gap  pairs  exact_cases  exact_max(m)  ideal_sigma_min(1/m)  "
+        "table_sigma_min(1/m)  noise_cases  noise_median(m)  "
+        "noise_p95(m)  failures"
     )
-    for row in summary_rows:
+    for row in gap_rows:
         print(
-            f"{row['gap_deg']:>3}  {row['receiver_count']:>9}  "
+            f"{row['gap_deg']:>3}  {row['circular_pair_count']:>5}  "
+            f"{row['receiver_case_count']:>11}  "
             f"{row['exact_max_error_m']:>12.3e}  "
-            f"{row['ideal_worst_sigma_min_per_m']:>20.3e}  "
-            f"{row['table_worst_sigma_min_per_m']:>20.3e}  "
+            f"{row['ideal_worst_angle_sigma_min_per_m']:>20.3e}  "
+            f"{row['table_worst_angle_sigma_min_per_m']:>20.3e}  "
+            f"{row['noise_sample_count']:>11}  "
             f"{row['noise_median_error_m']:>15.3f}  "
             f"{row['noise_p95_error_m']:>12.3f}  "
             f"{row['noise_solver_failures']:>8}"
         )
-    print("\nUnoriented-angle candidate check:")
-    for candidate in ambiguity["candidates"]:
+    print("\nMultistart candidate check:")
+    for candidate in candidate_check["candidates"]:
         print(
             f"  ({candidate['x_m']:.4f}, {candidate['y_m']:.4f}), "
-            f"residual={candidate['residual_norm']:.2e}, "
+            f"residual={candidate['angle_residual_norm_rad']:.2e} rad, "
             f"distance_to_nominal={candidate['distance_to_nominal_m']:.3f} m"
         )
 

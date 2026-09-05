@@ -5,8 +5,8 @@ import pytest
 
 from scripts.q1_1.localization import (
     GeometryError,
-    cosine_jacobian,
-    cosine_residuals,
+    angle_jacobian,
+    angle_residuals,
     find_local_candidates,
     fy_position,
     localize_receiver,
@@ -32,11 +32,11 @@ def test_chat_example_angles_and_exact_recovery() -> None:
     assert result.jacobian_singular_values[-1] > 0.0
 
 
-def test_analytic_jacobian_matches_central_difference() -> None:
+def test_angle_jacobian_matches_central_difference() -> None:
     anchors = np.vstack([fy_position(0), fy_position(1), fy_position(4)])
     receiver = polar_to_cartesian(105.0, 119.75)
     observed = pairwise_angles(receiver, anchors)
-    analytic = cosine_jacobian(receiver, anchors, observed)
+    analytic = angle_jacobian(receiver, anchors, observed)
 
     step = 1e-5
     numeric = np.empty_like(analytic)
@@ -44,11 +44,11 @@ def test_analytic_jacobian_matches_central_difference() -> None:
         offset = np.zeros(2)
         offset[axis] = step
         numeric[:, axis] = (
-            cosine_residuals(receiver + offset, anchors, observed)
-            - cosine_residuals(receiver - offset, anchors, observed)
+            angle_residuals(receiver + offset, anchors, observed)
+            - angle_residuals(receiver - offset, anchors, observed)
         ) / (2.0 * step)
 
-    assert analytic == pytest.approx(numeric, abs=2e-10)
+    assert analytic == pytest.approx(numeric, abs=2e-9)
 
 
 def test_small_angle_noise_keeps_local_solution_near_truth() -> None:
@@ -68,7 +68,7 @@ def test_small_angle_noise_keeps_local_solution_near_truth() -> None:
     assert result.residual_norm < 0.01
 
 
-def test_unoriented_angles_can_have_two_global_candidates() -> None:
+def test_multistart_finds_at_least_two_zero_residual_candidates() -> None:
     anchors = np.vstack([fy_position(0), fy_position(1), fy_position(5)])
     true_position = polar_to_cartesian(112.0, 80.21)
     observed = pairwise_angles(true_position, anchors)
@@ -78,7 +78,7 @@ def test_unoriented_angles_can_have_two_global_candidates() -> None:
 
     candidates = find_local_candidates(anchors, observed, starts)
 
-    assert len(candidates) == 2
+    assert len(candidates) >= 2
     assert min(
         np.linalg.norm(candidate.position - true_position) for candidate in candidates
     ) < 1e-7

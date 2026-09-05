@@ -105,7 +105,7 @@ def cosine_residuals(
     anchors: ArrayLike,
     observed_angles: ArrayLike,
 ) -> FloatArray:
-    """Evaluate the dot-product cosine residuals used by least squares."""
+    """Evaluate dot-product cosine residuals for exact-constraint diagnostics."""
 
     points = _as_anchor_array(anchors)
     observed_cosines = _observed_cosines(observed_angles, points.shape[0])
@@ -116,6 +116,24 @@ def cosine_residuals(
         for first, second in _pairs(points.shape[0])
     ]
     return np.asarray(predicted, dtype=float) - observed_cosines
+
+
+def angle_residuals(
+    receiver: ArrayLike,
+    anchors: ArrayLike,
+    observed_angles: ArrayLike,
+) -> FloatArray:
+    """Return predicted-minus-observed pairwise angles in radians.
+
+    The predicted angles are still obtained from the normalized dot product.
+    Using angle-domain residuals keeps the least-squares objective consistent
+    with an additive Gaussian angle-noise model.
+    """
+
+    points = _as_anchor_array(anchors)
+    angles = np.asarray(observed_angles, dtype=float)
+    _observed_cosines(angles, points.shape[0])
+    return pairwise_angles(receiver, points) - angles
 
 
 def cosine_jacobian(
@@ -142,12 +160,38 @@ def cosine_jacobian(
     return np.asarray(rows, dtype=float)
 
 
-def local_observability(receiver: ArrayLike, anchors: ArrayLike) -> FloatArray:
-    """Return descending Jacobian singular values at a proposed receiver point."""
+def angle_jacobian(
+    receiver: ArrayLike,
+    anchors: ArrayLike,
+    observed_angles: ArrayLike | None = None,
+) -> FloatArray:
+    """Analytic Jacobian of angle residuals with respect to (x, y)."""
 
-    singular_values = np.linalg.svd(
-        cosine_jacobian(receiver, anchors), compute_uv=False
+    points = _as_anchor_array(anchors)
+    if observed_angles is not None:
+        _observed_cosines(observed_angles, points.shape[0])
+    vectors, lengths = _receiver_vectors(receiver, points)
+    cosines = np.asarray(
+        [
+            np.dot(vectors[first], vectors[second])
+            / (lengths[first] * lengths[second])
+            for first, second in _pairs(points.shape[0])
+        ],
+        dtype=float,
     )
+    clipped = np.clip(cosines, -1.0, 1.0)
+    sine_magnitudes = np.sqrt(np.maximum(0.0, 1.0 - clipped**2))
+    if np.any(sine_magnitudes <= 1e-12):
+        raise GeometryError(
+            "angle Jacobian is undefined for a pairwise angle of 0 or pi"
+        )
+    return -cosine_jacobian(receiver, points) / sine_magnitudes[:, None]
+
+
+def local_observability(receiver: ArrayLike, anchors: ArrayLike) -> FloatArray:
+    """Return singular values of the angle Jacobian at a receiver point."""
+
+    singular_values = np.linalg.svd(angle_jacobian(receiver, anchors), compute_uv=False)
     return np.asarray(singular_values, dtype=float)
 
 
@@ -172,9 +216,9 @@ def localize_receiver(
     _receiver_vectors(initial, points)
 
     result = least_squares(
-        cosine_residuals,
+        angle_residuals,
         initial,
-        jac=cosine_jacobian,
+        jac=angle_jacobian,
         args=(points, angles),
         method="trf",
         ftol=1e-13,
