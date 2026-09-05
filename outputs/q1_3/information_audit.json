@@ -1,0 +1,9 @@
+{
+  "case_count": 16,
+  "receiver_coordinate_constraints": [
+    1
+  ],
+  "min_alternative_receiver_displacement_m": 0.5271351527299245,
+  "max_own_angle_difference_rad": 4.440892098500626e-16,
+  "interpretation": "The current two-configuration baseline requires shared receiver observations. Each receiver's own measurements admit distinct nearby formations with fixed FY00/FY01. The scheduled two movement batches validate exact centralized localization and actuation; they do not establish a receiver-only adjustment protocol."
+}

@@ -1,0 +1,172 @@
+{
+  "model_status": "ideal centralized simulation baseline; information-sharing and execution protocol require justification",
+  "scheduled_movement_batches": 2,
+  "measurement_slots_per_batch": 2,
+  "stopping_rule": "fixed two-batch schedule followed by truth-based validation",
+  "radius_m": 100,
+  "fixed_reference_ids": [
+    0,
+    1
+  ],
+  "angle_noise": "none",
+  "actuation": "exact relative displacement, gain=1",
+  "design_evaluation_state": "nominal formation only",
+  "objective": "maximize smallest singular value of all-pair angle Jacobian",
+  "single_configuration_count": 28,
+  "single_rank_counts": {
+    "14": 28
+  },
+  "single_table1_full_rank_count": 28,
+  "disjoint_unordered_design_count": 210,
+  "joint_full_rank_count": 210,
+  "selected_design": {
+    "a": [
+      2,
+      8
+    ],
+    "b": [
+      3,
+      9
+    ],
+    "rank": 16,
+    "rank_tolerance": 6.063242082388625e-11,
+    "sigma_min_rad_per_m": 0.006058248451694771,
+    "sigma_max_rad_per_m": 0.06063242082388625,
+    "condition_number": 10.008242697099123,
+    "tie_count": 1,
+    "tie_relative_tolerance": 1e-10
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "held_auxiliary_ids": [
+        2,
+        8
+      ],
+      "moving_ids": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "measurement_slots": [
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "angle_count": 72,
+      "nfev": 5,
+      "residual_norm_rad": 9.542429867210369e-16,
+      "max_localization_error_m": 1.7763568394002505e-14,
+      "rank": 16,
+      "rank_tolerance": 5.706369865436478e-11,
+      "sigma_min_rad_per_m": 0.005571797237841114,
+      "sigma_max_rad_per_m": 0.05706369865436478,
+      "condition_number": 10.241524631731766
+    },
+    {
+      "round": 2,
+      "held_auxiliary_ids": [
+        3,
+        9
+      ],
+      "moving_ids": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "measurement_slots": [
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "angle_count": 72,
+      "nfev": 4,
+      "residual_norm_rad": 1.3334236103572998e-15,
+      "max_localization_error_m": 7.652779469160725e-14,
+      "rank": 16,
+      "rank_tolerance": 6.134662225059146e-11,
+      "sigma_min_rad_per_m": 0.006140331627124927,
+      "sigma_max_rad_per_m": 0.061346622250591454,
+      "condition_number": 9.990766944832853
+    }
+  ],
+  "error_history": [
+    {
+      "round": 0,
+      "max_position_error_m": 12.01113974324003,
+      "rms_position_error_m": 7.414802070024728,
+      "max_radial_error_m": 12.000000000000014,
+      "max_adjacent_gap_error_deg": 0.45999999999999375
+    },
+    {
+      "round": 1,
+      "max_position_error_m": 2.021453358932606,
+      "rms_position_error_m": 0.9496271889478533,
+      "max_radial_error_m": 2.0,
+      "max_adjacent_gap_error_deg": 0.17000000000007276
+    },
+    {
+      "round": 2,
+      "max_position_error_m": 7.652779469160725e-14,
+      "rms_position_error_m": 3.693987092030734e-14,
+      "max_radial_error_m": 7.105427357601002e-14,
+      "max_adjacent_gap_error_deg": 5.684341886080802e-14
+    }
+  ],
+  "reference_design": {
+    "a": [
+      5,
+      8
+    ],
+    "b": [
+      4,
+      7
+    ],
+    "error_history": [
+      {
+        "round": 0,
+        "max_position_error_m": 12.01113974324003,
+        "rms_position_error_m": 7.414802070024728,
+        "max_radial_error_m": 12.000000000000014,
+        "max_adjacent_gap_error_deg": 0.45999999999999375
+      },
+      {
+        "round": 1,
+        "max_position_error_m": 2.021453358932606,
+        "rms_position_error_m": 0.9513022984438468,
+        "max_radial_error_m": 2.0,
+        "max_adjacent_gap_error_deg": 0.17000000000007276
+      },
+      {
+        "round": 2,
+        "max_position_error_m": 1.7112135109858138e-13,
+        "rms_position_error_m": 9.240850419634418e-14,
+        "max_radial_error_m": 1.4210854715202004e-13,
+        "max_adjacent_gap_error_deg": 9.947598300641403e-14
+      }
+    ]
+  },
+  "exhaustive_table1": {
+    "case_count": 210,
+    "passed": 210,
+    "max_final_error_m": 5.475668268957734e-11,
+    "failures": []
+  },
+  "evidence_scope": "Local identifiability at nominal and fitted states; finite exact-angle Table 1 simulations. Assumes fixed calibrated FY00/FY01, labeled signals, fusion of all receivers' observations, and displacement execution in the reference frame. No global uniqueness or noisy-flight guarantee."
+}
