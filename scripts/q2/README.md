@@ -59,3 +59,11 @@ conda run -n agent python scripts/q2/q2.py budget --help
 conda run -n agent python -m pytest -q tests/q2
 conda run -n agent python -m ruff check scripts/q2/q2.py tests/q2/test_standalone.py
 ```
+
+## 论文图复现
+
+[build_paper_assets.py](build_paper_assets.py)读取既有实验记录，生成方法示意、实际调整过程和校准规则对照三张图，输出 PNG、PDF、SVG 与图用 CSV。来源和图注见[资料索引](../../docs/q2/资料索引.md)。
+
+```bash
+conda run -n agent python scripts/q2/build_paper_assets.py
+```

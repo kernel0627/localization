@@ -1,0 +1,10 @@
+seed,gain,calibration_rule,online_status,historical_1e_minus6_status,failure_types,illustrative_0_01d_pass,final_apex_error_d,final_max_position_error_d,bootstrap_slots,main_slots,complete_slots,complete_tx_uses,bootstrap_relay_scalars,complete_displacement_d
+11,0.5,angle_1e-8,success,success,[],True,2.1156410673069585e-08,2.9415127667830878e-08,48,25,73,171,48,1.4544668499029187
+23,0.5,angle_1e-8,success,success,[],True,3.1067349352746174e-08,5.7445107965919646e-08,46,25,71,167,46,1.1687765890209127
+47,0.5,angle_1e-8,success,success,[],True,3.7801777650905415e-08,3.7801777650905415e-08,44,25,69,163,44,0.737100013472032
+11,0.5,position_0.005d,success,failure,"[""shape_error_above_1e-6d""]",True,0.002773013220575262,0.0027900850357397413,14,26,40,106,14,1.439487520255986
+23,0.5,position_0.005d,success,failure,"[""shape_error_above_1e-6d""]",True,0.0040720597077259875,0.004222147835980628,12,25,37,99,12,1.1513791087753114
+47,0.5,position_0.005d,success,failure,"[""shape_error_above_1e-6d""]",True,0.004954754625195409,0.004954754625195409,10,25,35,95,10,0.7250255664768228
+11,0.5,position_0.01d,success,failure,"[""shape_error_above_1e-6d""]",True,0.005546026441151468,0.0055791736561237055,12,26,38,102,12,1.4247197812083057
+23,0.5,position_0.01d,success,failure,"[""shape_error_above_1e-6d""]",True,0.008144119415451975,0.008444302393160397,10,25,35,95,10,1.1349413040887082
+47,0.5,position_0.01d,success,failure,"[""shape_error_above_1e-6d""]",True,0.009909509250390622,0.009909509250390622,8,25,33,91,8,0.7140508650957169
