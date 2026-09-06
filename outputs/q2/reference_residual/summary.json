@@ -1,0 +1,81 @@
+{
+  "contract": "Noiseless frozen FY01 offset; canonical upper local branch; production estimator unchanged. Injected main-stage costs exclude bootstrap; threshold comparison includes the complete two-stage protocol.",
+  "linear": {
+    "bootstrap_jacobian": [
+      [
+        -0.21650635094610968,
+        0.12500000000000003
+      ],
+      [
+        0.21650635094610968,
+        0.12500000000000003
+      ]
+    ],
+    "bootstrap_sigma_min": 0.17677669529663692,
+    "bootstrap_angle_box_factor": 7.999999999999998,
+    "g_max": 1.0408329997330665,
+    "receiver_angle_box_factor": 4.618802153517006,
+    "max_bootstrap_derivative_error": 5.299935490477026e-11,
+    "max_receiver_derivative_error": 3.281187321846346e-09,
+    "max_apex_derivative_error": 3.335054676867344e-09,
+    "max_solver_candidate_derivative_error": 7.142825553252408e-09
+  },
+  "residual_probes": {
+    "count": 480,
+    "rejected": 0,
+    "by_amplitude": [
+      {
+        "amplitude_d": 1e-05,
+        "max_candidate_gain": 1.0053770858666855,
+        "max_linear_error_d": 9.912499106635955e-11,
+        "rejected": 0
+      },
+      {
+        "amplitude_d": 0.001,
+        "max_candidate_gain": 1.0063294122781614,
+        "max_linear_error_d": 9.921860052120688e-07,
+        "rejected": 0
+      },
+      {
+        "amplitude_d": 0.005,
+        "max_candidate_gain": 1.0101950432600122,
+        "max_linear_error_d": 2.4899932665648115e-05,
+        "rejected": 0
+      },
+      {
+        "amplitude_d": 0.01,
+        "max_candidate_gain": 1.0150676811577832,
+        "max_linear_error_d": 0.00010008014622711043,
+        "rejected": 0
+      },
+      {
+        "amplitude_d": 0.02,
+        "max_candidate_gain": 1.0249506219880224,
+        "max_linear_error_d": 0.0004042182015168349,
+        "rejected": 0
+      }
+    ]
+  },
+  "main_stage_runs": {
+    "count": 32,
+    "converged": 32
+  },
+  "multistart": {
+    "count": 60,
+    "accepted": 51,
+    "accepted_wrong_position": 0
+  },
+  "threshold_comparison": {
+    "count": 27,
+    "online_success": 27,
+    "illustrative_0_01d_pass": 27,
+    "historical_1e_minus6_success": 15,
+    "action_reconstruction_and_cost_checks": "passed for every complete case"
+  },
+  "limits": [
+    "Linear coefficients are at the target only.",
+    "Rejected two-row candidates are not successful localizations.",
+    "Finite thresholds tested on three fixed initial states, not an entire neighborhood.",
+    "No noisy stopping rule or global uniqueness is validated."
+  ]
+}

@@ -173,9 +173,14 @@ def _bootstrap_record(
     case: InitialState,
     gain: float,
     max_rounds: int,
+    position_tolerance: float | None = None,
 ) -> tuple[np.ndarray, dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
     """Run bootstrap, returning the post-bootstrap state and audit rows."""
 
+    if position_tolerance is not None and (
+        not np.isfinite(position_tolerance) or position_tolerance <= 0
+    ):
+        raise ValueError("position_tolerance must be finite and positive")
     state = case.positions.copy()
     target_angles = _bootstrap_target_angles()
     rows: list[dict[str, Any]] = []
@@ -225,8 +230,19 @@ def _bootstrap_record(
             failure = row["failure"]
             status = "failure"
             break
-        if angle_error <= ANGLE_TOLERANCE:
-            row["event"] = "stop_angle_threshold"
+        if position_tolerance is None:
+            stop = angle_error <= ANGLE_TOLERANCE
+        else:
+            # This is an estimate from the observed base angles, not truth.
+            row["estimated_position_error_d"] = float(
+                np.linalg.norm(estimate - TARGET_TEMPLATE[C_INDEX])
+            )
+            stop = row["estimated_position_error_d"] <= position_tolerance
+        if stop:
+            row["event"] = (
+                "stop_angle_threshold" if position_tolerance is None
+                else "stop_estimated_position_threshold"
+            )
             rows.append(row)
             # The online protocol has only the two unsigned angles.  Side or
             # mirror classification is recorded offline from simulator truth
@@ -275,6 +291,9 @@ def _bootstrap_record(
         "final_apex_x": float(state[C_INDEX, 0]),
         "final_apex_y": float(state[C_INDEX, 1]),
     }
+    if position_tolerance is not None:
+        summary["position_tolerance_d"] = float(position_tolerance)
+        summary["stop_rule"] = "estimated_apex_position"
     return state, summary, rows, actions
 
 
@@ -446,10 +465,19 @@ def _main_record(
     return current, summary, records, actions
 
 
-def run_case(rho: float, seed: int | None, gain: float, max_rounds: int) -> dict[str, Any]:
+def run_case(
+    rho: float, seed: int | None, gain: float, max_rounds: int,
+    *, bootstrap_position_tolerance: float | None = None,
+) -> dict[str, Any]:
+    """Run one case; optional finite calibration is for bounded audits.
+
+    The default retains the original angle stop. The main-stage rule and
+    historical 1e-6 d offline acceptance remain the same for both modes.
+    """
     case = make_initial_state(rho, seed)
     bootstrap_state, bootstrap_summary, bootstrap_rows, bootstrap_actions = _bootstrap_record(
-        case=case, gain=gain, max_rounds=max_rounds
+        case=case, gain=gain, max_rounds=max_rounds,
+        position_tolerance=bootstrap_position_tolerance,
     )
     if bootstrap_summary["status"] == "converged":
         main_state, main_summary, main_rows, main_actions = _main_record(

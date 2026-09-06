@@ -1,0 +1,46 @@
+{
+  "contract": "Deterministic bounds for two base angles; canonical upper branch; interval lies in alpha>0, beta>0, alpha+beta<pi. No noise distribution assumed.",
+  "angle_to_position": [
+    {
+      "each_angle_bound_deg": 0.01,
+      "linear_apex_bound_d": 0.0013962634015954637,
+      "exact_apex_bound_d": 0.001396685633694883
+    },
+    {
+      "each_angle_bound_deg": 0.05,
+      "linear_apex_bound_d": 0.006981317007977318,
+      "exact_apex_bound_d": 0.0069918870163729885
+    },
+    {
+      "each_angle_bound_deg": 0.1,
+      "linear_apex_bound_d": 0.013962634015954637,
+      "exact_apex_bound_d": 0.014004985292195293
+    }
+  ],
+  "position_to_angle": [
+    {
+      "apex_position_budget_d": 0.002,
+      "equal_angle_bound_rad": 0.00024989178847771934,
+      "equal_angle_bound_deg": 0.014317744814749213,
+      "verified_exact_bound_d": 0.0019999999999993356
+    },
+    {
+      "apex_position_budget_d": 0.0048,
+      "equal_angle_bound_rad": 0.00059937703726082,
+      "equal_angle_bound_deg": 0.03434177457210047,
+      "verified_exact_bound_d": 0.0048000000000003595
+    },
+    {
+      "apex_position_budget_d": 0.005,
+      "equal_angle_bound_rad": 0.0006243240681666234,
+      "equal_angle_bound_deg": 0.03577113415438543,
+      "verified_exact_bound_d": 0.004999999999999449
+    },
+    {
+      "apex_position_budget_d": 0.01,
+      "equal_angle_bound_rad": 0.0012472988704992749,
+      "equal_angle_bound_deg": 0.07146496107104307,
+      "verified_exact_bound_d": 0.010000000000001119
+    }
+  ]
+}
