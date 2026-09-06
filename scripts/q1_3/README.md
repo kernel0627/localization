@@ -1,6 +1,6 @@
 # 问题 1（3）代码入口
 
-正文见 [编队互校与调度改进](../../solutions/q1_3/README.md)，推导、实验和历史研究的对应关系见 [资料索引](../../docs/q1_3/资料索引.md)。从仓库根目录运行以下命令，Python 使用 Conda `agent` 环境。
+正文见 [四机发射与轮换互校的编队调整](../../solutions/q1_3/README.md)，公式、图表与计算结果的对应关系见 [资料索引](../../docs/q1_3/资料索引.md)。从仓库根目录运行以下命令，Python 使用 Conda `agent` 环境。
 
 ## 整理正文与图表
 
@@ -40,7 +40,9 @@ conda run --no-capture-output -n agent python -m scripts.q1_3.run_robustness --t
 conda run --no-capture-output -n agent python -m scripts.q1_3.run_two_configuration_robustness --trials 100 --workers 4
 ```
 
-双配置批次按既有合同运行，依赖 `appendix1/evaluation_560/` 内 505 条冻结记录及源文件散列。`appendix1` 指向被 Git 忽略的本地 `scratch` 归档，因此单独检出代码不能重建这批记录；需同时携带该归档和已有结果。当前整理保留这一依赖，不声称实现了脱离归档的完整重跑。
+双配置仿真与分析通过 `appendix1/optimize_schedule.py` 调用调度模拟器；双配置批次还依赖 `appendix1/evaluation_560/` 内 505 条冻结记录及源文件散列。`appendix1` 指向被 Git 忽略的本地 `scratch` 归档，因此运行这些入口需同时携带归档。正式 `outputs/q1_3/` 内已保存用于写作的表 1、随机实验与数学分析结果。
+
+配置的选择过程见[双配置选择依据](../../docs/q1_3/双配置选择依据.md)。已有的 210 组局部排序与候选轨迹比较表保存于 `outputs/q1_3/two_configuration_selection/`，可直接核对选取 04/05 → 07/08 的依据；两份表是原有筛选结果的副本。
 
 ## 数学分析与完整报告
 
