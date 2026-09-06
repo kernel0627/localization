@@ -1,0 +1,10 @@
+family,case,receiver_id,initial_id,point_x,point_y,candidate_x,candidate_y,observation_difference,position_error_d,accepted,message
+bootstrap_mirror,lower_apex_same_unsigned_base_angles,,,2.0,-3.4641016151377544,2.0000000000000004,3.464101615137754,0.0,6.928203230275509,True,unsigned bootstrap angles choose the canonical upper branch
+circumcircle_default_start,theta_0,2,template,4.309401076758503,1.1547005383792515,1.5,2.598076211353316,0.0,3.1584913714343386,False,geometry/solver failure: receiver coincides with a transmitter
+circumcircle_on_branch_start,theta_0,2,point_itself,4.309401076758503,1.1547005383792515,4.309401076758503,1.1547005383792515,0.0,0.0,True,`gtol` termination condition is satisfied.
+circumcircle_default_start,theta_1,2,template,4.206255116653363,1.8371752218468445,1.5,2.598076211353316,6.661338147750939e-16,2.8111896186924916,False,geometry/solver failure: receiver coincides with a transmitter
+circumcircle_on_branch_start,theta_1,2,point_itself,4.206255116653363,1.8371752218468445,4.206255116653363,1.8371752218468445,6.661338147750939e-16,0.0,True,`gtol` termination condition is satisfied.
+receiver_multistart,actual_Q_plus_0.03_minus_0.02,2,template,1.53,2.578076211353316,1.53,2.5780762113533164,0.0,4.440892098500626e-16,True,`gtol` termination condition is satisfied.
+receiver_multistart,actual_Q_plus_0.03_minus_0.02,2,nearby,1.53,2.578076211353316,1.5300000000000005,2.578076211353317,0.0,9.930136612989092e-16,True,`gtol` termination condition is satisfied.
+receiver_multistart,actual_Q_plus_0.03_minus_0.02,2,reflected,1.53,2.578076211353316,1.5300000000000025,2.5780762113533178,0.0,3.0201331455116262e-15,True,`gtol` termination condition is satisfied.
+receiver_multistart,actual_Q_plus_0.03_minus_0.02,2,far,1.53,2.578076211353316,2.000000000053138,3.464101615148776,0.0,1.0029661092085103,False,solver converged but complete-triangle residual 2.251e+00 exceeds 1.000e-08

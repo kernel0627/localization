@@ -1,0 +1,15 @@
+{
+  "q2_tests": {
+    "command": "conda run -n agent python -m pytest -q tests/q2",
+    "passed": 41
+  },
+  "ruff": "passed for four analysis modules and their tests",
+  "git_diff_check": "passed",
+  "independent_reviews": [
+    "apex interval theorem and Gaussian finite-check contract",
+    "reference propagation and geometry",
+    "fair protocol table and physical cost definitions"
+  ],
+  "scope": "two-dimensional angle-only estimation with ideal canonical-coordinate actions",
+  "main_document": "solutions/q2/README.md"
+}

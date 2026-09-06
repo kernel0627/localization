@@ -1,5 +1,6 @@
 {
-  "contract": "Deterministic bounds for two base angles; canonical upper branch; interval lies in alpha>0, beta>0, alpha+beta<pi. No noise distribution assumed.",
+  "deterministic_contract": "Bounded intervals for two base angles; canonical upper branch; alpha>0, beta>0, alpha+beta<pi. Geometry alone assumes no noise distribution.",
+  "gaussian_contract": "Known Gaussian single-sample variance; fixed independent samples per angle within each stationary batch; predeclared maximum checks; Bonferroni family error control. Sample requirements assume means centered exactly at target, not guaranteed acceptance.",
   "angle_to_position": [
     {
       "each_angle_bound_deg": 0.01,
@@ -41,6 +42,140 @@
       "equal_angle_bound_rad": 0.0012472988704992749,
       "equal_angle_bound_deg": 0.07146496107104307,
       "verified_exact_bound_d": 0.010000000000001119
+    }
+  ],
+  "gaussian_confidence_budget": [
+    {
+      "sigma_each_angle_deg": 0.01,
+      "apex_budget_d": 0.0048,
+      "planned_checks": 1,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 1,
+      "one_check_measurement_slots": 2,
+      "one_check_tx_uses": 4,
+      "angle_mean_interval_half_width_deg": 0.028070337683438116,
+      "best_centered_exact_apex_radius_d": 0.003922687490898191
+    },
+    {
+      "sigma_each_angle_deg": 0.01,
+      "apex_budget_d": 0.0048,
+      "planned_checks": 30,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 2,
+      "one_check_measurement_slots": 4,
+      "one_check_tx_uses": 8,
+      "angle_mean_interval_half_width_deg": 0.026621323325569254,
+      "best_centered_exact_apex_radius_d": 0.0037200319554009376
+    },
+    {
+      "sigma_each_angle_deg": 0.01,
+      "apex_budget_d": 0.005,
+      "planned_checks": 1,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 1,
+      "one_check_measurement_slots": 2,
+      "one_check_tx_uses": 4,
+      "angle_mean_interval_half_width_deg": 0.028070337683438116,
+      "best_centered_exact_apex_radius_d": 0.003922687490898191
+    },
+    {
+      "sigma_each_angle_deg": 0.01,
+      "apex_budget_d": 0.005,
+      "planned_checks": 30,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 2,
+      "one_check_measurement_slots": 4,
+      "one_check_tx_uses": 8,
+      "angle_mean_interval_half_width_deg": 0.026621323325569254,
+      "best_centered_exact_apex_radius_d": 0.0037200319554009376
+    },
+    {
+      "sigma_each_angle_deg": 0.05,
+      "apex_budget_d": 0.0048,
+      "planned_checks": 1,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 17,
+      "one_check_measurement_slots": 34,
+      "one_check_tx_uses": 68,
+      "angle_mean_interval_half_width_deg": 0.03404028447516797,
+      "best_centered_exact_apex_radius_d": 0.004757816870737397
+    },
+    {
+      "sigma_each_angle_deg": 0.05,
+      "apex_budget_d": 0.0048,
+      "planned_checks": 30,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 31,
+      "one_check_measurement_slots": 62,
+      "one_check_tx_uses": 124,
+      "angle_mean_interval_half_width_deg": 0.033809114432604294,
+      "best_centered_exact_apex_radius_d": 0.004725473126612645
+    },
+    {
+      "sigma_each_angle_deg": 0.05,
+      "apex_budget_d": 0.005,
+      "planned_checks": 1,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 16,
+      "one_check_measurement_slots": 32,
+      "one_check_tx_uses": 64,
+      "angle_mean_interval_half_width_deg": 0.03508792210429765,
+      "best_centered_exact_apex_radius_d": 0.004904400895208827
+    },
+    {
+      "sigma_each_angle_deg": 0.05,
+      "apex_budget_d": 0.005,
+      "planned_checks": 30,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 28,
+      "one_check_measurement_slots": 56,
+      "one_check_tx_uses": 112,
+      "angle_mean_interval_half_width_deg": 0.03557423966671915,
+      "best_centered_exact_apex_radius_d": 0.004972448943373564
+    },
+    {
+      "sigma_each_angle_deg": 0.1,
+      "apex_budget_d": 0.0048,
+      "planned_checks": 1,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 67,
+      "one_check_measurement_slots": 134,
+      "one_check_tx_uses": 268,
+      "angle_mean_interval_half_width_deg": 0.034293375576794904,
+      "best_centered_exact_apex_radius_d": 0.004793228179838849
+    },
+    {
+      "sigma_each_angle_deg": 0.1,
+      "apex_budget_d": 0.0048,
+      "planned_checks": 30,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 121,
+      "one_check_measurement_slots": 242,
+      "one_check_tx_uses": 484,
+      "angle_mean_interval_half_width_deg": 0.034225669541217515,
+      "best_centered_exact_apex_radius_d": 0.00478375501861894
+    },
+    {
+      "sigma_each_angle_deg": 0.1,
+      "apex_budget_d": 0.005,
+      "planned_checks": 1,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 62,
+      "one_check_measurement_slots": 124,
+      "one_check_tx_uses": 248,
+      "angle_mean_interval_half_width_deg": 0.03564936450734874,
+      "best_centered_exact_apex_radius_d": 0.004982960975135509
+    },
+    {
+      "sigma_each_angle_deg": 0.1,
+      "apex_budget_d": 0.005,
+      "planned_checks": 30,
+      "family_error_probability": 0.01,
+      "samples_per_angle_best_centered": 111,
+      "one_check_measurement_slots": 222,
+      "one_check_tx_uses": 444,
+      "angle_mean_interval_half_width_deg": 0.035734124695532304,
+      "best_centered_exact_apex_radius_d": 0.004994821314479925
     }
   ]
 }

@@ -1,0 +1,569 @@
+{
+  "contract": {
+    "rho": 0.1,
+    "seeds": [
+      11,
+      23,
+      47
+    ],
+    "tau_c_values_d": [
+      0.0048,
+      0.005
+    ],
+    "gain_pairs_eta_c_eta_r": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.75
+      ],
+      [
+        0.75,
+        0.75
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        1.0
+      ]
+    ],
+    "final_position_budget_d": 0.01,
+    "fair_shared_budget": {
+      "tau_c_d": 0.005,
+      "receiver_estimate_budget_d": 0.0045,
+      "first_order_reference_bound_d": 0.005204164999999999,
+      "nonlinear_margin_d": 0.0002,
+      "budget_formula": "0.01 - 1.040833*0.005 - 0.0002 is conservatively rounded to 0.0045"
+    },
+    "strict_angle_tolerance_rad": 1e-08,
+    "max_rounds_per_stage": 30,
+    "units": "normalised d; no metre scale inferred from angles"
+  },
+  "accounting": {
+    "bootstrap_round": {
+      "measurement_slots": 2,
+      "transmitter_uses": 4,
+      "relay_scalars": 2
+    },
+    "fixed_main_broadcast": {
+      "measurement_slots": 1,
+      "transmitter_uses": 3
+    },
+    "dynamic_round": {
+      "measurement_slots": 3,
+      "transmitter_uses": 7,
+      "relay_scalars": 2,
+      "explanation": "two bottom-angle slots (FY01+one bottom corner each) plus one (1,11,15) broadcast"
+    },
+    "static_full_protocol": "2*n_C+n_R slots, 4*n_C+3*n_R transmitter uses",
+    "dynamic_full_protocol": "3*n_dynamic slots, 7*n_dynamic transmitter uses, 2*n_dynamic public scalars",
+    "dynamic_payload_visibility": "the 2 current C_hat coordinates are counted separately as public_reference_scalars; no extra physical slot is invented"
+  },
+  "run_count": 93,
+  "success_count": 93,
+  "failure_count": 0,
+  "success_count_meaning": "online protocol stop only; actual final position budget is counted separately",
+  "online_success_count": 93,
+  "final_position_budget_pass_count": 88,
+  "final_position_budget_fail_count": 5,
+  "actual_budget_by_group": {
+    "strict_angle": {
+      "runs": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "unallocated_reference_budget": {
+      "runs": 60,
+      "passed": 55,
+      "failed": 5
+    },
+    "fair_shared_position_budget": {
+      "runs": 30,
+      "passed": 30,
+      "failed": 0
+    }
+  },
+  "strict_angle_records": 3,
+  "record_groups": {
+    "strict_angle": 3,
+    "unallocated_reference_budget": 60,
+    "fair_shared_position_budget": 30
+  },
+  "details": [
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_001_strict_angle",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "strict_angle"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_002_strict_angle",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "strict_angle"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_003_strict_angle",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "strict_angle"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_004_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_005_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_006_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_007_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_008_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_009_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_010_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_011_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_012_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_013_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_014_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_015_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_016_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_017_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_018_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_019_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_020_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_021_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_022_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_023_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_024_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_025_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_026_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_027_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_028_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_029_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_030_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_031_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_032_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_033_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_034_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_035_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_036_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_037_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_038_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_039_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_040_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_041_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_042_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_043_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_044_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_045_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_046_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_047_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_048_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_049_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_050_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_051_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_052_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_053_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_054_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_055_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_056_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_057_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_058_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_059_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_060_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_061_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_062_unallocated_reference_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_063_unallocated_reference_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "unallocated_reference_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_064_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_065_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_066_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_067_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_068_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_069_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_070_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_071_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_072_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_073_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_074_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_075_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_076_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_077_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_078_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_079_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_080_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_081_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_082_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_083_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_084_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_085_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_086_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_087_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_088_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_089_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_090_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_091_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_092_fair_shared_position_budget",
+      "protocol": "staged_fixed_reference",
+      "record_kind": "fair_shared_position_budget"
+    },
+    {
+      "case_dir": "outputs/q2/protocol_comparison/cases/case_093_fair_shared_position_budget",
+      "protocol": "dynamic_current_reference",
+      "record_kind": "fair_shared_position_budget"
+    }
+  ],
+  "decision": {
+    "mainline": "staged_fixed_reference_with_finite_tau_C_then_12_parallel_receivers",
+    "dynamic_role": "bounded comparison; current-anchor remeasurement pays 7 transmitter uses and 2 public scalars per round",
+    "interpretation": "A dynamic synchronized round can match the six-slot strict unit-gain static route in the exact model, but it has no cost advantage there; its value is conditional on avoiding a long finite calibration or on reference motion requiring fresh anchors."
+  }
+}

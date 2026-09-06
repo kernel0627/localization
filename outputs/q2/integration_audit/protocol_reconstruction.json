@@ -1,0 +1,24 @@
+{
+  "protocol_runs": 93,
+  "groups": {
+    "strict_angle": {
+      "runs": 3,
+      "online_pass": 3,
+      "actual_pass": 3
+    },
+    "unallocated_reference_budget": {
+      "runs": 60,
+      "online_pass": 60,
+      "actual_pass": 55
+    },
+    "fair_shared_position_budget": {
+      "runs": 30,
+      "online_pass": 30,
+      "actual_pass": 30
+    }
+  },
+  "max_final_state_reconstruction_difference_d": 0.0,
+  "max_action_step_difference_d": 0.0,
+  "max_cumulative_displacement_difference_d": 2.220446049250313e-16,
+  "stage_cost_checks": "passed"
+}

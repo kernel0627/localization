@@ -1,0 +1,138 @@
+{
+  "contract": "Finite noiseless geometry and branch-boundary audit; production estimator unchanged; rows are evidence only for listed paths, amplitudes, offsets, and starts.",
+  "bootstrap": {
+    "row_count": 22,
+    "paths": [
+      "base_exterior_x_minus1",
+      "base_interior_x2",
+      "far_diagonal_x2t_h_t",
+      "far_horizontal_h1",
+      "high_vertical_x2"
+    ],
+    "interior_small_h_last_angle_sum": 1e-08,
+    "exterior_small_h_last_angle_sum": 3.1415926455897933,
+    "high_far_included": true
+  },
+  "receiver_boundary": {
+    "row_count": 480,
+    "circumcircle_exact_row_count": 24,
+    "reference_ray_rows_with_one_nonsmooth_angle": 180,
+    "circumcircle_exact_selected_rank_deficient": 24
+  },
+  "g_worst_direction": {
+    "global_worst_receiver_id": 2,
+    "global_worst_g_spectral_norm": 1.0408329997330665,
+    "global_worst_right_singular_vector": [
+      0.8660254037844385,
+      -0.5000000000000003
+    ],
+    "amplitudes_d": [
+      0.002,
+      0.0048,
+      0.005,
+      0.01,
+      0.02
+    ],
+    "offset_scenarios": {
+      "Q": [
+        0.0,
+        0.0
+      ],
+      "plus_0.05_x": [
+        0.05,
+        0.0
+      ],
+      "plus_0.05_y": [
+        0.0,
+        0.05
+      ],
+      "plus_0.10_x": [
+        0.1,
+        0.0
+      ],
+      "plus_0.10_y": [
+        0.0,
+        0.1
+      ]
+    },
+    "row_count": 600,
+    "accepted_count": 600,
+    "rejected_count": 0
+  },
+  "main_stage": {
+    "row_count": 30,
+    "converged_count": 30,
+    "failure_count": 0,
+    "receiver_offset_scenarios": [
+      "Q",
+      "plus_0.05_x",
+      "plus_0.05_y",
+      "plus_0.10_x",
+      "plus_0.10_y"
+    ],
+    "by_amplitude": {
+      "0.0048": {
+        "row_count": 10,
+        "converged_count": 10,
+        "failure_count": 0,
+        "final_team_max_error_range_d": [
+          0.0049959948768425405,
+          0.00499599637138323
+        ],
+        "broadcast_slots_range": [
+          4,
+          4
+        ],
+        "tx_uses_range": [
+          12,
+          12
+        ]
+      },
+      "0.005": {
+        "row_count": 10,
+        "converged_count": 10,
+        "failure_count": 0,
+        "final_team_max_error_range_d": [
+          0.005204161021475152,
+          0.0052041627103438575
+        ],
+        "broadcast_slots_range": [
+          4,
+          4
+        ],
+        "tx_uses_range": [
+          12,
+          12
+        ]
+      },
+      "0.01": {
+        "row_count": 10,
+        "converged_count": 10,
+        "failure_count": 0,
+        "final_team_max_error_range_d": [
+          0.01040829732187857,
+          0.010408308661081002
+        ],
+        "broadcast_slots_range": [
+          4,
+          5
+        ],
+        "tx_uses_range": [
+          12,
+          15
+        ]
+      }
+    }
+  },
+  "counterexamples": {
+    "row_count": 9,
+    "rejected_count": 3,
+    "circumcircle_observation_pair_difference": 6.661338147750939e-16
+  },
+  "limits": [
+    "No noisy observations, execution errors, or global uniqueness claim.",
+    "A finite path approaching a boundary does not establish behavior elsewhere.",
+    "Circumcircle rank loss is local and exact for the listed reference triangle.",
+    "Main-stage runs retain the true FY01 residual and report online stopping separately from position error."
+  ]
+}

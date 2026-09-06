@@ -1,0 +1,71 @@
+{
+  "rho": 0.1,
+  "seed": 47,
+  "initial_max_error_d": 0.1147435226954799,
+  "initial_rms_error_d": 0.061127590608246296,
+  "actual_spacing_d": 0.9676913254328862,
+  "protocol": "dynamic_current_reference",
+  "eta_c": 1.0,
+  "eta_r": 0.75,
+  "tau_c_d": 0.005,
+  "final_position_budget_d": 0.01,
+  "receiver_estimate_budget_d": 0.01,
+  "budget_group": "unallocated_reference_budget",
+  "stop_rule": "c_hat_position_and_receiver_estimated_position_budget",
+  "status": "success",
+  "online_status": "success",
+  "failures": [],
+  "measurement_slots": 9,
+  "tx_uses": 21,
+  "relay_scalar_count": 6,
+  "public_reference_scalars": 6,
+  "final_max_position_error_d": 0.009253201337257605,
+  "final_position_budget_pass": true,
+  "final_position_budget_excess_d": 0.0,
+  "first_order_reference_propagation_bound_d": 0.005204164999999999,
+  "online_budget_plus_reference_bound_d": 0.015204164999999999,
+  "final_rms_position_error_d": 0.005447939820028758,
+  "cumulative_displacement_d": 0.6676521329122104,
+  "action_count": 19,
+  "bootstrap": {},
+  "main": {
+    "status": "success",
+    "rounds": 3,
+    "stop_rule": "c_hat_position_and_receiver_estimated_position_budget",
+    "position_budget_d": 0.01,
+    "tau_c_d": 0.005,
+    "broadcast_slots": 3,
+    "measurement_slots": 9,
+    "tx_uses": 21,
+    "relay_scalar_count": 6,
+    "public_reference_scalars": 6,
+    "failures": [],
+    "rounds_detail": [
+      {
+        "round": 1,
+        "c_hat_error_to_target_d": 0.07927607400312557,
+        "receiver_budget_met_count": 0,
+        "calibration_action": true,
+        "receiver_action_count": 12,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 2,
+        "c_hat_error_to_target_d": 6.280369834735101e-16,
+        "receiver_budget_met_count": 6,
+        "calibration_action": false,
+        "receiver_action_count": 6,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 3,
+        "c_hat_error_to_target_d": 6.280369834735101e-16,
+        "receiver_budget_met_count": 6,
+        "calibration_action": false,
+        "receiver_action_count": 0,
+        "event": "stop_after_observable_verification"
+      }
+    ],
+    "final_c_hat_error_d": 6.280369834735101e-16
+  }
+}

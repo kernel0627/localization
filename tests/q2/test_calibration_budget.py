@@ -1,7 +1,10 @@
 import numpy as np
 import pytest
 
-from scripts.q2.calibration_budget import apex_angle_box, equal_angle_budget
+from scripts.q2.calibration_budget import (
+    apex_angle_box, equal_angle_budget, gaussian_angle_half_width,
+    gaussian_minimum_samples,
+)
 from scripts.q2.triangle_reference import TARGET_ANCHORS, bootstrap_from_angles
 
 
@@ -38,3 +41,15 @@ def test_inverse_budget_and_monotonicity() -> None:
 def test_unsupported_angle_domains_are_rejected(center, width) -> None:
     with pytest.raises(ValueError):
         apex_angle_box(center, width)
+
+
+def test_confidence_budget_counts_samples_and_multiple_checks() -> None:
+    sigma = np.deg2rad(0.05)
+    for checks in (1, 30):
+        k = gaussian_minimum_samples(0.0048, sigma, planned_checks=checks)
+        width = gaussian_angle_half_width(sigma, k, planned_checks=checks)
+        assert apex_angle_box(np.full(2, np.pi/3), width)["maximum_position_error_d"] <= 0.0048
+        previous = gaussian_angle_half_width(sigma, k-1, planned_checks=checks)
+        assert apex_angle_box(np.full(2, np.pi/3), previous)["maximum_position_error_d"] > 0.0048
+    assert gaussian_minimum_samples(0.0048, sigma, planned_checks=30) > gaussian_minimum_samples(0.0048, sigma)
+    assert gaussian_angle_half_width(sigma, 4) == pytest.approx(gaussian_angle_half_width(sigma, 1)/2)

@@ -1,0 +1,103 @@
+{
+  "rho": 0.1,
+  "seed": 11,
+  "initial_max_error_d": 0.1774728461168589,
+  "initial_rms_error_d": 0.11133921628245336,
+  "actual_spacing_d": 0.992717292188455,
+  "protocol": "dynamic_current_reference",
+  "eta_c": 0.5,
+  "eta_r": 1.0,
+  "tau_c_d": 0.005,
+  "final_position_budget_d": 0.01,
+  "receiver_estimate_budget_d": 0.01,
+  "budget_group": "unallocated_reference_budget",
+  "stop_rule": "c_hat_position_and_receiver_estimated_position_budget",
+  "status": "success",
+  "online_status": "success",
+  "failures": [],
+  "measurement_slots": 21,
+  "tx_uses": 49,
+  "relay_scalar_count": 14,
+  "public_reference_scalars": 14,
+  "final_max_position_error_d": 0.002773013220575262,
+  "final_position_budget_pass": true,
+  "final_position_budget_excess_d": 0.0,
+  "first_order_reference_propagation_bound_d": 0.005204164999999999,
+  "online_budget_plus_reference_bound_d": 0.015204164999999999,
+  "final_rms_position_error_d": 0.0007159889348067322,
+  "cumulative_displacement_d": 1.4516940789557444,
+  "action_count": 18,
+  "bootstrap": {},
+  "main": {
+    "status": "success",
+    "rounds": 7,
+    "stop_rule": "c_hat_position_and_receiver_estimated_position_budget",
+    "position_budget_d": 0.01,
+    "tau_c_d": 0.005,
+    "broadcast_slots": 7,
+    "measurement_slots": 21,
+    "tx_uses": 49,
+    "relay_scalar_count": 14,
+    "public_reference_scalars": 14,
+    "failures": [],
+    "rounds_detail": [
+      {
+        "round": 1,
+        "c_hat_error_to_target_d": 0.17747284611685984,
+        "receiver_budget_met_count": 0,
+        "calibration_action": true,
+        "receiver_action_count": 12,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 2,
+        "c_hat_error_to_target_d": 0.08873642305842852,
+        "receiver_budget_met_count": 12,
+        "calibration_action": true,
+        "receiver_action_count": 0,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 3,
+        "c_hat_error_to_target_d": 0.044368211529215204,
+        "receiver_budget_met_count": 0,
+        "calibration_action": true,
+        "receiver_action_count": 0,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 4,
+        "c_hat_error_to_target_d": 0.022184105764607127,
+        "receiver_budget_met_count": 0,
+        "calibration_action": true,
+        "receiver_action_count": 0,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 5,
+        "c_hat_error_to_target_d": 0.011092052882304191,
+        "receiver_budget_met_count": 0,
+        "calibration_action": true,
+        "receiver_action_count": 0,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 6,
+        "c_hat_error_to_target_d": 0.005546026441152409,
+        "receiver_budget_met_count": 0,
+        "calibration_action": true,
+        "receiver_action_count": 0,
+        "event": "observe_and_synchronize_move"
+      },
+      {
+        "round": 7,
+        "c_hat_error_to_target_d": 0.0027730132205758882,
+        "receiver_budget_met_count": 0,
+        "calibration_action": false,
+        "receiver_action_count": 0,
+        "event": "stop_after_observable_verification"
+      }
+    ],
+    "final_c_hat_error_d": 0.0027730132205758882
+  }
+}

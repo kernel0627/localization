@@ -1,0 +1,49 @@
+{
+  "copied_source": "/var/folders/jh/80fxrqmx75j86r95_pwmvjkm0000gn/T/q2-standalone-bs0dhlua/isolated/q2.py",
+  "python": "/Users/traegang/miniforge3/envs/agent/bin/python",
+  "repository_imports_available_in_isolated_run": false,
+  "commands": {
+    "triangle": {
+      "files_compared": 58,
+      "result": "exact_match",
+      "output_path_normalization_only": true
+    },
+    "residual": {
+      "files_compared": 10,
+      "result": "exact_match",
+      "output_path_normalization_only": true
+    },
+    "geometry": {
+      "files_compared": 6,
+      "result": "exact_match",
+      "output_path_normalization_only": true
+    },
+    "budget": {
+      "files_compared": 4,
+      "result": "exact_match",
+      "output_path_normalization_only": true
+    },
+    "noise": {
+      "files_compared": 10,
+      "result": "exact_match",
+      "output_path_normalization_only": true
+    },
+    "protocols": {
+      "files_compared": 374,
+      "result": "exact_match",
+      "output_path_normalization_only": true
+    },
+    "e0": {
+      "files_compared": 5,
+      "result": "exact_match",
+      "output_path_normalization_only": true
+    }
+  },
+  "total_files_compared": 467,
+  "comparison": "text outputs identical after output-directory normalization; all NPZ arrays exactly equal",
+  "repository_entry": "scripts/q2/q2.py",
+  "source_sha256": "a459fa6cd7cfcc5908c469e9bc63960f1de957c62442f5ef79e4778548fa93f0",
+  "q2_tests_passed": 44,
+  "standalone_tests_passed": 3,
+  "ruff": "passed"
+}
