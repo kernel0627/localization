@@ -1,0 +1,4 @@
+scan_index,configuration_a,configuration_b,full_rows_a,full_rows_b,degenerate_rows_a,degenerate_rows_b,regular_rows_a,regular_rows_b,full_rows_total,degenerate_rows_total,regular_rows_total,rank_1e-08,rank_1e-09,rank_1e-10,shape_rank_1e-08,shape_rank_1e-09,shape_rank_1e-10,shape_sigma_min,gauge_residual,stable_rank_26
+1,1-11-15,2-7-10,36,36,9,5,27,31,72,14,58,26,26,26,26,26,26,0.27410312563300365,7.259043314517161e-17,True
+2,1-2-3,1-2-4,36,36,6,6,30,30,72,12,60,26,26,26,26,26,26,0.05856181543792853,1.0165049322025971e-16,True
+3,1-2-3,1-2-5,36,36,6,6,30,30,72,12,60,26,26,26,26,26,26,0.11142615088539772,9.213424456804675e-17,True

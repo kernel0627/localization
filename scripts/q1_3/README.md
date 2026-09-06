@@ -2,6 +2,16 @@
 
 正文见 [四机发射与轮换互校的编队调整](../../solutions/q1_3/README.md)，公式、图表与计算结果的对应关系见 [资料索引](../../docs/q1_3/资料索引.md)。从仓库根目录运行以下命令，Python 使用 Conda `agent` 环境。
 
+## 单文件自包含复现
+
+[scripts/q1/q1.py](../q1/q1.py) 将 Q1.1、Q1.2、Q1.3 的当前方法合并为一个可独立运行的文件，不依赖 Q1.3 的历史附录。双配置表 1 算例可从仓库根目录执行：
+
+```bash
+conda run -n agent python scripts/q1/q1.py q1_3_2 --no-plot --output-dir scratch/q1_reproduction/q1_3_2
+```
+
+旧的 appendix/appendix1 模块化分析仍用于历史复现和深度诊断，依赖 [本地冻结归档](../../scratch/q1_3_appendices_archive_20260906/README.md)。
+
 ## 整理正文与图表
 
 ```bash
@@ -22,7 +32,7 @@ conda run --no-capture-output -n agent python -m scripts.q1_3.sync_solution --ch
 | 全配置轮换，表 1 单次运行 | [run_adjustment.py](run_adjustment.py) | 默认写 `outputs/q1_3/`，支持 `--output-dir` |
 | 全配置轨迹执行与评价 | [run_iterative_reference_baseline.py](run_iterative_reference_baseline.py) | 同步模拟与离线真值评价 |
 | 双配置历史调度与模拟 | [optimize_schedule.py](../../appendix1/optimize_schedule.py) | 本地归档中的既有实现，分析脚本仍通过兼容链接导入 |
-| 全配置随机与噪声批次 | [run_robustness.py](run_robustness.py) | `outputs/q1_3/robustness/`，505 条记录 |
+| 全配置随机与噪声批次 | [run_robustness.py](run_robustness.py) | `outputs/q1_3/robustness/`，505 条随机初态与噪声混合批次记录 |
 | 双配置随机与噪声批次 | [run_two_configuration_robustness.py](run_two_configuration_robustness.py) | `outputs/q1_3/two_configuration_robustness/`，1616 条记录；包含冻结批次复用 |
 | 白噪声与相对执行误差 | [simulation_noise.py](simulation_noise.py) | 仿真器私有扰动 |
 | 双配置联合噪声与固定链路偏置 | [two_configuration_noise.py](two_configuration_noise.py) | 同一链路偏置在一次运行内保持不变 |

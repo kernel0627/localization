@@ -2,7 +2,7 @@
 
 2022 年高教社杯全国大学生数学建模竞赛 B 题“无人机遂行编队飞行中的纯方位无源定位”的解题工作底稿，汇集模型、计算过程、实验结果和论文图表。
 
-当前已完成第一问的定位、匿名发射机辨识与圆形编队调整，第二问尚未开展。
+当前已完成第一问的定位、匿名发射机辨识与圆形编队调整；第二问的二维静态几何 E0 已完成，角度反演与调整仍待开展。
 
 ## 阅读入口
 
@@ -13,8 +13,19 @@
 | 1（1）已知编号定位 | 用三组夹角建立非线性最小二乘模型，结合自身编号与小偏差条件选择位置解 | [定位模型](solutions/q1_1/README.md) |
 | 1（2）匿名发射机辨识 | 枚举匿名编号并检查定位一致性；精确测角、偏差充分小时，FY00、FY01 之外再增加 1 架具有局部充分性 | [辨识模型](solutions/q1_2/README.md) |
 | 1（3）圆形编队调整 | 四机发射、接收机估计本机径向与角向偏差并同步修正；由全 28 配置轮换改进为两配置交替 | [调整方案](solutions/q1_3/README.md) |
+| 2（E0）二维形状局部可辨识性 | 15 点三角网格、静止带编号角度批次；455 个单配置与双配置见证的 Jacobian 探针 | [E0 说明](docs/q2/E0局部可辨识性.md) |
 
 1（3）的双配置为 FY00、FY01、FY04、FY05 与 FY00、FY01、FY07、FY08 交替发射。表 1 初态、精确测角与执行、同一增益 $\eta=0.5$ 下，首次达到全队最大位置误差小于 $1\,\mathrm{cm}$ 的累计测角时隙从 **92 降至 31**。一个时隙包括四机同时发射、其余六机测角和同步调整。
+
+## 单文件复现入口
+
+[scripts/q1/q1.py](scripts/q1/q1.py) 将 Q1.1、Q1.2 和 Q1.3 的当前方法整理为一个可独立运行的文件，不依赖 Q1.3 的历史附录。以双配置表 1 算例为例，从仓库根目录执行：
+
+```bash
+conda run -n agent python scripts/q1/q1.py q1_3_2 --no-plot --output-dir scratch/q1_reproduction/q1_3_2
+```
+
+本机使用 Conda `agent` 环境运行。这条复现会报告首次厘米级时隙、结束时隙、发射机使用次数和累计端点位移。
 
 ## 写论文时取用什么
 
@@ -39,4 +50,4 @@ conda run -n agent python -m pip install -r requirements.txt
 conda run -n agent python -m scripts.q1_3.run_adjustment --output-dir scratch/q1_3_reproduction/main
 ```
 
-全配置控制器位于 [local_adjustment.py](scripts/q1_3/local_adjustment.py)。双配置的现有运行入口仍依赖本地归档，具体文件要求见[代码说明](scripts/q1_3/README.md#控制器与实验)。正式目录内的正文、图表和汇总数据可直接用于阅读与论文整理。
+全配置控制器位于 [local_adjustment.py](scripts/q1_3/local_adjustment.py)。双配置的旧模块分析入口仍依赖本地 archive，具体文件要求见[代码说明](scripts/q1_3/README.md#控制器与实验)；单文件入口可独立复现。正式目录内的正文、图表和汇总数据可直接用于阅读与论文整理。
