@@ -1,0 +1,52 @@
+{
+  "plot_script": "scripts/q1_3/report_two_configuration_robustness.py",
+  "plot_script_sha256": "fc8a925ce3bcf593d585a40f4b6800c25472afd43971eaa8503bce4493789d11",
+  "math_inputs_sha256": {
+    "outputs/q1_3/two_configuration_robustness_math/periodic_covariance.csv": "f31adb1c02ab2d0f91a77a127f9faf27f7e864b731440774f518a2755fa8005d",
+    "outputs/q1_3/two_configuration_robustness_math/combined_stationary_moments.csv": "baca0f8364573a67e40e2fc42ed1594188efa17eec58f09b6906e9af07e859d9",
+    "outputs/q1_3/two_configuration_robustness_math/fixed_link_bias_response.csv": "c25bc1e1778177abbe9bb0ee42523555270d4d37b08ac49a6365fd77bde48b9e",
+    "outputs/q1_3/two_configuration_robustness_math/multiplicative_stability.csv": "649e7cb69874765ed4975fb063593fcf9373e311bdd1a2818c5b514682c073a6",
+    "outputs/q1_3/two_configuration_robustness_math/gaussian_precision_probability.csv": "07a001916b3a4a126272a89c4f838ac7846dda8705eed7e670ff5d8d4a2845ec",
+    "outputs/q1_3/two_configuration_robustness_math/gaussian_precision_probability_sources.json": "acb7ec2a5f766591e6e7c7c4f8b6d977a2118be957c5d65266e05369631a21c6",
+    "outputs/q1_3/two_configuration_robustness_math/random_initial_moments.csv": "3b044cabdaa454ac9d3b6364589b18de4a0f22802c0958f125fdf168d5437a7e",
+    "outputs/q1_3/two_configuration_robustness_math/random_initial_moments_sources.json": "8ae44cb548f4a1c1160e6577d38a0227c8ab8bd73a5d8c15e50f96a87e604a3c",
+    "outputs/q1_3/two_configuration_robustness_math/summary.json": "80e4df0fe7c0d079a64b1611253e757ef69a4e36eefa38b8070dcaa6291a1e9d"
+  },
+  "artifacts_sha256": {
+    "figures/q1_3/two_configuration_robustness/exact_paired_slots.png": "f1b7e568822652274116dba839843a9f7764033a64235694bc43c104b62f3f54",
+    "figures/q1_3/two_configuration_robustness/main_common_three_way.png": "a2b9985b454b02fe1e897f408d3b15bdbb03d6dc644adf428ca567a72b2a7bac",
+    "figures/q1_3/two_configuration_robustness/precision_stop_rate.png": "773d0d8033ec7c23bde1f6595b01c38981663a57fc02ddc4cfa3cfaea9f41750",
+    "figures/q1_3/two_configuration_robustness/terminal_error_gain.png": "b0eece935ba81e69855d9c34a309a5178e84a7c694979939a06ef2ade0ffb340",
+    "figures/q1_3/two_configuration_robustness/theory_empirical.png": "b1938c9c07f744d640a479911ac93b34578b822d6ae12cd6afa819c076679e94",
+    "figures/q1_3/two_configuration_robustness/data/exact_paired_slots_data.csv": "f358f061d073381d3ae009a3ac0da32af0a5bd4e589981e230f99717b0b353d8",
+    "figures/q1_3/two_configuration_robustness/data/main_common_three_way_data.csv": "a09b1383d4f1e91c6013f6735dfd77b6db753ffad24a4a5c17dac2bb85071512",
+    "figures/q1_3/two_configuration_robustness/data/precision_stop_rate_data.csv": "44aa4a0f3a41642c20b66017c2fedbad8a857449379c5d4ec3605e700661ec35",
+    "figures/q1_3/two_configuration_robustness/data/terminal_error_gain_data.csv": "1b76561a65b0be3242024813ed26fbdbd4a9abf8079b360d2b8538eac101350b",
+    "figures/q1_3/two_configuration_robustness/data/theory_empirical_data.csv": "88ea75ec72791c05d198d1d69c8a8c5495a1c0baf41321ef76d85cd4f1b5527c"
+  },
+  "style_assets_sha256": {
+    "scripts/figure_style.py": "e900c0fd24702554bca4264f735464ae4e71f718703c37581d699d823c32c23a",
+    "assets/fonts/source-han-sans/SourceHanSansSC-Regular.otf": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256",
+    "assets/fonts/source-han-sans/SourceHanSansSC-Bold.otf": "df2b90f5bcc6d01dfc964cec5f6d535d6b6aebd26ed7fd79a9c1b3f2112fcb6b"
+  },
+  "export_formats": [
+    "png"
+  ],
+  "style": {
+    "style_script_path": "scripts/figure_style.py",
+    "style_script_sha256": "e900c0fd24702554bca4264f735464ae4e71f718703c37581d699d823c32c23a",
+    "fonts": {
+      "assets/fonts/source-han-sans/SourceHanSansSC-Regular.otf": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256",
+      "assets/fonts/source-han-sans/SourceHanSansSC-Bold.otf": "df2b90f5bcc6d01dfc964cec5f6d535d6b6aebd26ed7fd79a9c1b3f2112fcb6b"
+    },
+    "chinese_font": "Source Han Sans SC",
+    "latin_font": "Arial",
+    "dpi": 300,
+    "font_size_pt": 9,
+    "axes_label_size_pt": 9.5,
+    "tick_legend_size_pt": 8.5,
+    "panel_title_size_pt": 10,
+    "main_line_width_pt": 1.3,
+    "axes_line_width_pt": 0.8
+  }
+}

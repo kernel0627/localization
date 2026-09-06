@@ -1,0 +1,19 @@
+{
+  "core_ids": [
+    4,
+    5,
+    7,
+    8
+  ],
+  "follower_ids": [
+    2,
+    3,
+    6,
+    9
+  ],
+  "follower_to_core_block_max_abs": 0.0,
+  "follower_self_block_error_vs_quarter_identity": 2.4755254790745897e-16,
+  "core_cycle_rho": 0.500017523806445,
+  "core_two_cycle_norm_2": 0.7196605027988062,
+  "scope": "Active smooth local map at nominal geometry. Core physical observations and local controller state do not depend on followers; global logging termination remains separate. Near-repeated eigenvalue splitting must not be interpreted as precision of rho."
+}

@@ -1,0 +1,7 @@
+condition,samples,phase,slot,statistic,observed_root_expected_rms_squared_m,predicted_root_expected_rms_squared_m,ratio_observed_to_predicted
+bearing_0.001deg,100,1,559,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.0037588423623992743,0.0036912099748462567,1.0183225522291872
+bearing_0.001deg,100,2,560,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.0037893281750974077,0.0037693307079584497,1.0053053097985634
+bearing_0.01deg,100,1,559,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.038297784626008365,0.036912099748462567,1.0375401260559152
+bearing_0.01deg,100,2,560,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.038709417093356555,0.037693307079584494,1.0269573060179271
+bearing_0.1deg,100,1,559,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.38296148234770017,0.3691209974846256,1.0374957939466747
+bearing_0.1deg,100,2,560,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.387001870978653,0.376933070795845,1.026712435079122

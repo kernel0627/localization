@@ -97,7 +97,7 @@ def audit_information():
 
 def main():
     rows = audit_information()
-    output_dir = Path(__file__).resolve().parents[2] / "outputs/q1_3"
+    output_dir = Path(__file__).resolve().parents[2] / "outputs/q1_3/joint_baseline"
     output_dir.mkdir(parents=True, exist_ok=True)
     write_csv(output_dir / "receiver_information.csv", rows)
     summary = {

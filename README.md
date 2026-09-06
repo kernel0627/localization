@@ -13,8 +13,8 @@
 3. 阅读 [`docs/q1_1/验证记录.md`](docs/q1_1/验证记录.md)，查看数值实验、多起点候选和证据范围。
 4. 阅读 [`solutions/q1_2/README.md`](solutions/q1_2/README.md)，查看额外 1 架的论证、身份枚举方法和完整例子。
 5. 阅读 [`docs/q1_2/验证记录.md`](docs/q1_2/验证记录.md)，查看 560 个案例、候选补查与退化处理。
-6. 阅读 [`solutions/q1_3/README.md`](solutions/q1_3/README.md)，查看本机双偏差估计、参考择优、公开轮换、保持条件和表 1 迭代结果。
-7. 查看 [`outputs/q1_3/summary.json`](outputs/q1_3/summary.json) 与 [`outputs/q1_3/error_history.csv`](outputs/q1_3/error_history.csv)，核对当前参数、动作计数和逐时隙误差。
+6. 阅读 [1.3 编队互校与调度改进](solutions/q1_3/README.md)：从全配置轮换的基础模型和表 1 结果，进入双配置改进，再分析随机初态与测角误差。正文保留两张组合图和一张实验汇总表。
+7. 通过 [1.3 资料索引](docs/q1_3/资料索引.md) 查找完整推导、全量统计、原始数据和历史研究；通过 [代码入口](scripts/q1_3/README.md) 选择出图、仿真、数学分析或复核命令。
 
 ## 目录
 
@@ -25,7 +25,7 @@
 │   ├── q1/                 # 第一问整体解法与连续推导
 │   ├── q1_1/               # 问题 1（1）正式解答
 │   ├── q1_2/               # 问题 1（2）正式解答
-│   └── q1_3/               # 问题 1（3）本机迭代方法与表 1 仿真
+│   └── q1_3/               # 本机互校、双配置改进与随机含噪分析正文
 ├── scripts/
 │   ├── q1_1/               # 已知编号定位与实验入口
 │   ├── q1_2/               # 匿名编号辨识与实验入口
@@ -46,11 +46,11 @@
 ## 安装与运行
 
 ```bash
-python -m pip install -r requirements.txt
-python -m pytest
-python scripts/q1_1/run_validation.py
-python -m scripts.q1_2.run_validation
-python -m scripts.q1_3.run_adjustment
+conda run --no-capture-output -n agent python -m pip install -r requirements.txt
+conda run --no-capture-output -n agent python -m pytest
+conda run --no-capture-output -n agent python scripts/q1_1/run_validation.py
+conda run --no-capture-output -n agent python -m scripts.q1_2.run_validation
+conda run --no-capture-output -n agent python -m scripts.q1_3.run_adjustment
 ```
 
 问题 1（1）实验穷举全部 36 组圆周发射机组合和 252 个有效接收案例。默认对每个案例运行 200 次标准差为 $0.1^\circ$ 的独立高斯角度噪声试验，共 50400 次；固定随机种子为 20220904，结果写入 `outputs/q1_1/`。
@@ -72,4 +72,13 @@ python -m scripts.q1_3.run_adjustment
 
 三项精度门槛在首次达到后，后续记录均保持达标。这些门槛用于离线描述精度进展。控制器按本机估计与夹角残差进入保持，仿真还需确认完整轮换表内的接收决策均为保持；第 146～196 个时隙没有位置改变，其中第 169～196 个时隙构成完整的停止确认窗口。因此，应分别报告达到指定精度的时隙、最后移动时隙和停止确认时隙。
 
-默认运行有 145 个时隙发生移动，共产生 850 次非零单机动作。早期角向误差会暂时增大，完整轨迹见 [逐时隙误差记录](outputs/q1_3/error_history.csv)。实际坐标用于仿真生成观测、模拟执行和离线评分，本机控制依据自身观测与已知编队信息。当前结果属于精确模型下的有限仿真，一般收敛性及测角、执行误差下的性能仍需研究。
+默认运行有 145 个时隙发生移动，共产生 850 次非零单机动作。早期角向误差会暂时增大，完整轨迹见 [逐时隙误差记录](outputs/q1_3/error_history.csv)。实际坐标用于仿真生成观测、模拟执行和离线评分，本机控制依据自身观测与已知编队信息。当前结果属于精确模型下的有限仿真，现已补充 505 次随机初态、方向噪声与相对执行误差实验，原停止规则在方向噪声下未完成确认，精度和代价按预算终点如实报告。一般收敛性及真实设备误差保证未由这些实验确立。
+
+
+## 1.3 的正文、补充材料与代码
+
+[1.3 正文](solutions/q1_3/README.md) 统一介绍全配置轮换和双配置调度。表 1 在相同增益 0.5 下，首次厘米达标分别为 92、31 时隙，完整协议停止分别为 196、84 时隙。双配置缩短了调整过程，也改变了完整周期确认窗口；精度进程与停止开销分别评价。
+
+随机实验中，全配置与双配置增益 0.5 在小白噪声下的终点厘米达标分别为 78/100、99/100，但均未在 560 时隙内完成协议停止。固定偏置单独分析，尚无全配置同条件对照。核心局部收敛、随机矩和含噪分析留在正文，详细参数、原始矩阵和完整试验见 [资料索引](docs/q1_3/资料索引.md)。
+
+正文图片统一由 `scripts/q1_3/build_paper_assets.py` 读取已有 CSV 生成；第一问总文档的 1.3 由 `scripts/q1_3/sync_solution.py` 同步，避免两处手动维护。运行方式和现有本地归档依赖见 [代码说明](scripts/q1_3/README.md)。

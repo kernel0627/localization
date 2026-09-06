@@ -1,0 +1,18 @@
+{
+  "purpose": "Offline information audit, not a new localization/controller input",
+  "pair_count": 28,
+  "joint_rank_4_pairs": 28,
+  "min_joint_sigma_min": 0.0012468200376510468,
+  "max_joint_sigma_min": 0.005485789317795774,
+  "max_derivative_entry_error": 1.1640638539894832e-12,
+  "counterexamples": 4,
+  "max_own_angle_difference_rad": 1.304512053934559e-15,
+  "scope": "A single receiver's instantaneous local fit/residual cannot certify both anchors. This does not exclude time feedback, preplanned protocols, or future angle-only certificates under additional explicit conditions.",
+  "source_sha256": {
+    "scripts/q1_3/audit_appendix_information.py": "c14b76c4753a0852d013c79f5ed67ac777a881537626ca9d31a580cc7d5caecd",
+    "scripts/q1_3/audit_information.py": "2261a1f2adc09ef6ea539ea087639f46dc08753d99d2fdeac4639de58b0ddc1d",
+    "scripts/q1_3/analyze_iterative_reference.py": "fb531724b3f987d4bc906619959012e73607b48f6737d966339d1d3f71f0b606",
+    "scripts/q1_3/local_adjustment.py": "9c8aac0e6881243fab17999ccbc36ec3722cab549f87a0d9ba69bd22ab262234",
+    "scripts/q1_1/localization.py": "f18b955f8e2152d4df98aa21d6dc7cafddacde601f4dc5158c6a34d42c13a1d2"
+  }
+}

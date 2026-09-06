@@ -1,0 +1,23 @@
+section,method,condition,runs,stopped_count,final_below_1cm_count,rms_p05_m,rms_median_m,rms_p95_m,samples,phase,slot,statistic,observed_root_expected_rms_squared_m,predicted_root_expected_rms_squared_m,ratio_observed_to_predicted,bearing_std_deg
+random,main,exact,100,100,100,2.1220203286757833e-05,3.410040822974183e-05,4.9838645677727166e-05,,,,,,,,
+random,main,bearing_0.001deg,100,0,78,0.0025155521041910706,0.003972891221703318,0.0070436577431231785,,,,,,,,
+random,main,bearing_0.01deg,100,0,0,0.025345691798784237,0.040934275780524124,0.0737882896120314,,,,,,,,
+random,main,bearing_0.1deg,100,0,0,0.25267804422869616,0.4085697600161026,0.7427442661009559,,,,,,,,
+random,main,actuation_1pct,100,100,100,2.2095316997646615e-05,3.200073333190973e-05,5.2608214742416213e-05,,,,,,,,
+random,two_configuration,exact,100,100,100,5.028600932565983e-07,6.497950666299185e-07,7.944023126203097e-07,,,,,,,,
+random,two_configuration,bearing_0.001deg,100,0,99,0.002476089106071764,0.003628322604541363,0.005044111288998138,,,,,,,,
+random,two_configuration,bearing_0.01deg,100,0,0,0.02668761226533402,0.0370289575941114,0.05208072953010534,,,,,,,,
+random,two_configuration,bearing_0.1deg,100,0,0,0.2669835420820637,0.3701685801715657,0.5166859492014739,,,,,,,,
+random,two_configuration,actuation_1pct,100,100,100,4.834243127912675e-07,6.517060237303444e-07,8.221668374759893e-07,,,,,,,,
+noise_observed,,bearing_0.001deg,,,,,,,100,1,559,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.0037588423623992743,0.0036912099748462567,1.0183225522291872,
+noise_observed,,bearing_0.001deg,,,,,,,100,2,560,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.0037893281750974077,0.0037693307079584497,1.0053053097985634,
+noise_observed,,bearing_0.01deg,,,,,,,100,1,559,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.038297784626008365,0.036912099748462567,1.0375401260559152,
+noise_observed,,bearing_0.01deg,,,,,,,100,2,560,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.038709417093356555,0.037693307079584494,1.0269573060179271,
+noise_observed,,bearing_0.1deg,,,,,,,100,1,559,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.38296148234770017,0.3691209974846256,1.0374957939466747,
+noise_observed,,bearing_0.1deg,,,,,,,100,2,560,sqrt(mean(geometric_RMS^2)); FY01-FY09 denominator 9,0.387001870978653,0.376933070795845,1.026712435079122,
+noise_prediction,,,,,,,,,,1,,,,0.0036912099748462567,,0.001
+noise_prediction,,,,,,,,,,2,,,,0.0037693307079584497,,0.001
+noise_prediction,,,,,,,,,,1,,,,0.036912099748462567,,0.01
+noise_prediction,,,,,,,,,,2,,,,0.037693307079584494,,0.01
+noise_prediction,,,,,,,,,,1,,,,0.3691209974846256,,0.1
+noise_prediction,,,,,,,,,,2,,,,0.376933070795845,,0.1

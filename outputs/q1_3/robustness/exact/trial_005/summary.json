@@ -1,0 +1,284 @@
+{
+  "fingerprint": "4cb0b3b255ccb86138a2af5f0ac7f953e8aaf08c6cf2fab2f854f740e90d13e3",
+  "evaluation": {
+    "condition": "exact",
+    "trial": 5,
+    "bearing_std_deg": 0.0,
+    "actuation_relative_std": 0.0,
+    "status": "quiet_full_cycle",
+    "stopped": true,
+    "final_below_1cm": true,
+    "joint_success_1cm": true,
+    "final_below_10cm": true,
+    "first_1cm_slot": 114,
+    "first_1cm_tx": 456,
+    "sustained_1cm_from_slot": 114,
+    "max_position_error_m": 3.6457524846362734e-05,
+    "rms_position_error_m": 2.0946964727048266e-05,
+    "last28_mean_max_error_m": 3.645752484636273e-05,
+    "measurement_slots": 224,
+    "transmitter_uses": 896,
+    "movement_m": 644.3809125344759,
+    "failed_local_fits": 0,
+    "seconds": 2.475407208999968
+  },
+  "initial_positions": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      100.0,
+      0.0
+    ],
+    [
+      69.53254733697356,
+      58.86386247536921
+    ],
+    [
+      17.13126644504007,
+      98.28721306795951
+    ],
+    [
+      -55.68508156567476,
+      96.02251164143615
+    ],
+    [
+      -90.82668214112552,
+      32.96725495270885
+    ],
+    [
+      -98.16686839358024,
+      -35.77734631344765
+    ],
+    [
+      -51.41502183066192,
+      -89.61099759315216
+    ],
+    [
+      16.96069675720652,
+      -94.7887915788344
+    ],
+    [
+      79.92047195992427,
+      -66.67191626216069
+    ]
+  ],
+  "final_positions": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      100.0,
+      0.0
+    ],
+    [
+      76.60447507340051,
+      64.2787414013069
+    ],
+    [
+      17.364848400950564,
+      98.48078329519274
+    ],
+    [
+      -49.999999768663194,
+      86.60256435556687
+    ],
+    [
+      -93.96927278849277,
+      34.20202290317487
+    ],
+    [
+      -93.96926640796502,
+      -34.202005586622356
+    ],
+    [
+      -50.00000060823404,
+      -86.60253748320062
+    ],
+    [
+      17.364810943317835,
+      -98.48077754801463
+    ],
+    [
+      76.60443937267061,
+      -64.27878693714204
+    ]
+  ],
+  "summary": {
+    "method": "receiver-local radial/angular bias estimation with public transmitter rotation",
+    "status": "quiet_full_cycle",
+    "settings": {
+      "radius_m": 100.0,
+      "gain": 0.5,
+      "radial_tolerance_m": 0.001,
+      "angular_tolerance_rad": 1e-05,
+      "consistency_tolerance_rad": 1e-05,
+      "selection_scale_rad": 0.001,
+      "max_radial_step_m": 5.0,
+      "max_angular_step_rad": 0.03490658503988659
+    },
+    "fixed_reference_ids": [
+      0,
+      1
+    ],
+    "schedule_period_slots": 28,
+    "epochs": 8,
+    "measurement_slots": 224,
+    "transmitter_uses": 896,
+    "total_endpoint_displacement_m": 644.3809125344759,
+    "last_motion_slot": 173,
+    "post_motion_confirmation_slots": 51,
+    "post_motion_transmitter_uses": 204,
+    "slots_with_motion": 173,
+    "receiver_decisions": 1344,
+    "nonzero_receiver_moves": 1017,
+    "failed_local_fits": 0,
+    "local_hold_rule": "enter after 21 consecutive own observations at half tolerance; resume when any local indicator exceeds full tolerance",
+    "termination": "a full 28-slot period with every receiver locally within tolerance; actual coordinates are used only for retrospective metrics",
+    "initial_metrics": {
+      "slot": 0,
+      "epoch": 0,
+      "transmitters": "",
+      "transmitter_uses": 0,
+      "cumulative_transmitter_uses": 0,
+      "endpoint_displacement_m": 0.0,
+      "cumulative_endpoint_displacement_m": 0.0,
+      "max_position_error_m": 11.002545660163172,
+      "rms_position_error_m": 5.513148686000971,
+      "max_radial_error_m": 11.000680407399273,
+      "max_angular_error_deg": 0.2501037316349623,
+      "max_adjacent_gap_error_deg": 0.25010373163495103
+    },
+    "final_metrics": {
+      "slot": 224,
+      "epoch": 8,
+      "transmitters": "0-1-8-9",
+      "transmitter_uses": 4,
+      "cumulative_transmitter_uses": 896,
+      "endpoint_displacement_m": 0.0,
+      "cumulative_endpoint_displacement_m": 644.3809125344759,
+      "max_position_error_m": 3.6457524846362734e-05,
+      "rms_position_error_m": 2.0946964727048266e-05,
+      "max_radial_error_m": 2.064912996502244e-05,
+      "max_angular_error_deg": 1.9917483412202055e-05,
+      "max_adjacent_gap_error_deg": 1.9917483413678383e-05
+    },
+    "epoch_history": [
+      {
+        "epoch": 0,
+        "slot": 0,
+        "max_position_error_m": 11.002545660163172,
+        "rms_position_error_m": 5.513148686000971,
+        "max_radial_error_m": 11.000680407399273,
+        "max_angular_error_deg": 0.2501037316349623,
+        "max_adjacent_gap_error_deg": 0.25010373163495103
+      },
+      {
+        "epoch": 1,
+        "slot": 28,
+        "max_position_error_m": 14.098330153809593,
+        "rms_position_error_m": 9.085740021960545,
+        "max_radial_error_m": 7.9852664056409,
+        "max_angular_error_deg": 7.506442972310547,
+        "max_adjacent_gap_error_deg": 7.506442972310559
+      },
+      {
+        "epoch": 2,
+        "slot": 56,
+        "max_position_error_m": 1.9248903747061141,
+        "rms_position_error_m": 1.2894543547580442,
+        "max_radial_error_m": 1.1565261768902673,
+        "max_angular_error_deg": 1.0352790483112218,
+        "max_adjacent_gap_error_deg": 1.0352790483112102
+      },
+      {
+        "epoch": 3,
+        "slot": 84,
+        "max_position_error_m": 0.18460244557273792,
+        "rms_position_error_m": 0.10836946744340392,
+        "max_radial_error_m": 0.09521661535701753,
+        "max_angular_error_deg": 0.0993750238686032,
+        "max_adjacent_gap_error_deg": 0.0993750238685962
+      },
+      {
+        "epoch": 4,
+        "slot": 112,
+        "max_position_error_m": 0.012643515739020852,
+        "rms_position_error_m": 0.006729322326364236,
+        "max_radial_error_m": 0.005519283683526055,
+        "max_angular_error_deg": 0.0068072366054522165,
+        "max_adjacent_gap_error_deg": 0.006807236605432365
+      },
+      {
+        "epoch": 5,
+        "slot": 140,
+        "max_position_error_m": 0.0008502154285559431,
+        "rms_position_error_m": 0.0004097792305809776,
+        "max_radial_error_m": 0.00031308041502597916,
+        "max_angular_error_deg": 0.000457703983413842,
+        "max_adjacent_gap_error_deg": 0.00045770398340039264
+      },
+      {
+        "epoch": 6,
+        "slot": 168,
+        "max_position_error_m": 6.050524593688531e-05,
+        "rms_position_error_m": 3.020974542647191e-05,
+        "max_radial_error_m": 2.0700480618529582e-05,
+        "max_angular_error_deg": 3.2574933627856046e-05,
+        "max_adjacent_gap_error_deg": 3.257493364827724e-05
+      },
+      {
+        "epoch": 7,
+        "slot": 196,
+        "max_position_error_m": 3.6457524846362734e-05,
+        "rms_position_error_m": 2.0946964727048266e-05,
+        "max_radial_error_m": 2.064912996502244e-05,
+        "max_angular_error_deg": 1.9917483412202055e-05,
+        "max_adjacent_gap_error_deg": 1.9917483413678383e-05
+      },
+      {
+        "epoch": 8,
+        "slot": 224,
+        "max_position_error_m": 3.6457524846362734e-05,
+        "rms_position_error_m": 2.0946964727048266e-05,
+        "max_radial_error_m": 2.064912996502244e-05,
+        "max_angular_error_deg": 1.9917483412202055e-05,
+        "max_adjacent_gap_error_deg": 1.9917483413678383e-05
+      }
+    ],
+    "scope": "Independent Gaussian errors on four local ray directions before six pair angles are formed; optional independent relative radial/angular execution errors. Fixed FY00/FY01, original local controller and stop thresholds. Noise settings are experimental assumptions.",
+    "simulation_noise": {
+      "bearing_std_deg": 0.0,
+      "actuation_relative_std": 0.0,
+      "seed": 2026090506
+    },
+    "precision_thresholds": [
+      {
+        "threshold": "2cm",
+        "threshold_m": 0.02,
+        "first_slot": 107,
+        "transmitter_uses_at_first": 428,
+        "endpoint_displacement_at_first_m": 644.1274305849302,
+        "all_recorded_slots_after_first_below": true
+      },
+      {
+        "threshold": "1cm",
+        "threshold_m": 0.01,
+        "first_slot": 114,
+        "transmitter_uses_at_first": 456,
+        "endpoint_displacement_at_first_m": 644.1997717253454,
+        "all_recorded_slots_after_first_below": true
+      },
+      {
+        "threshold": "1mm",
+        "threshold_m": 0.001,
+        "first_slot": 138,
+        "transmitter_uses_at_first": 552,
+        "endpoint_displacement_at_first_m": 644.3690144947773,
+        "all_recorded_slots_after_first_below": true
+      }
+    ]
+  }
+}

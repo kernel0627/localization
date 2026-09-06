@@ -1,0 +1,14 @@
+{
+  "verified_runs": 505,
+  "random_runs": 500,
+  "table1_sentinels": 5,
+  "checks": [
+    "source hashes",
+    "paired initial conditions",
+    "fixed references",
+    "final Emax and RMS from coordinates",
+    "per-slot cumulative costs",
+    "all-trial statistics and success definitions"
+  ],
+  "all_passed": true
+}

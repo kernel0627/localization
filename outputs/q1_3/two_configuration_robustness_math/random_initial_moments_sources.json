@@ -1,0 +1,56 @@
+{
+  "source_sha256": {
+    "outputs/q1_3/two_configuration_robustness_math/phase_matrices_and_injections.npz": "a09edd7d800cad4f9a690202aced1a16cee03ff452b8e232c8d17bf1ffdf291f",
+    "scripts/q1_3/analyze_two_configuration_random_initial.py": "12bc77a33fa70df0089f78ce07943b260a3d93789c7c5afe44ca2895a82b2bbe"
+  },
+  "state_definition": "x=(dr, 100*dtheta) in metres for FY02--FY09; FY01 is fixed and remains in the RMS denominator 9.",
+  "initial_law": "For each moving drone independently, dr~Uniform[-12,12] m and dtheta~Uniform[-0.3,0.3] degree.",
+  "initial_second_moment": "E[x0]=0; P0=I_8 kron diag(48, 100^2*(0.3*pi/180)^2/3), ordered from FY02 through FY09.",
+  "cases": {
+    "exact_local": "P+=M P M^T",
+    "bearing_0.001deg_local": "P+=M P M^T + sigma_beta^2 Q_iid_per_radian2, with sigma_beta=0.001*pi/180 rad.",
+    "combined_0.001deg_1pct_local": "P+=M P M^T + 0.01^2 diag(diag(U P U^T + sigma_beta^2 Q_iid_per_radian2)) + sigma_beta^2 Q_iid_per_radian2, with sigma_beta=0.001*pi/180 rad."
+  },
+  "phase_convention": "Slot 1 applies saved phase 1; odd slots apply phase 1 and even slots phase 2. Slot 0 is the random initial state.",
+  "scope": "Frozen active nominal branch only. No clipping, receiver hold, candidate switching, or nonlinear geometry update is represented.",
+  "initial_geometry": {
+    "angle_half_width_rad": 0.005235987755982988,
+    "radial_variance_m2": 48.0,
+    "tangential_variance_m2": 0.09138522593601256,
+    "linear_initial_expected_rms_squared_m2": 42.74789797860979,
+    "true_geometric_initial_expected_rms_squared_m2": 42.74789786725934,
+    "true_geometric_initial_root_expected_rms_squared_m": 6.5381876592263195,
+    "quadrature_true_geometric_initial_expected_rms_squared_m2": 42.74789786725934,
+    "analytic_quadrature_absolute_error_m2": 0.0
+  },
+  "checks": {
+    "initial_diagonal_max_absolute_error_m2": 0.0,
+    "initial_off_diagonal_max_absolute_error_m2": 0.0,
+    "analytic_quadrature_absolute_error_m2": 0.0,
+    "minimum_second_moment_eigenvalue_m2": -1.2300240690833769e-14,
+    "psd_roundoff_tolerance_m2": -1e-12,
+    "terminal_stationary_consistency": {
+      "gain_0.5": {
+        "bearing_0.001deg_local": {
+          "random_initial_vs_zero_started_phase_560_relative_frobenius": 1.1652952255055374e-16,
+          "zero_started_phase_560_two_slot_closure_relative_frobenius": 0.0
+        },
+        "combined_0.001deg_1pct_local": {
+          "random_initial_vs_zero_started_phase_560_relative_frobenius": 6.229190130251311e-17,
+          "zero_started_phase_560_two_slot_closure_relative_frobenius": 0.0
+        }
+      },
+      "gain_1": {
+        "bearing_0.001deg_local": {
+          "random_initial_vs_zero_started_phase_560_relative_frobenius": 0.0,
+          "zero_started_phase_560_two_slot_closure_relative_frobenius": 0.0
+        },
+        "combined_0.001deg_1pct_local": {
+          "random_initial_vs_zero_started_phase_560_relative_frobenius": 0.0,
+          "zero_started_phase_560_two_slot_closure_relative_frobenius": 0.0
+        }
+      }
+    }
+  },
+  "rows": 3366
+}

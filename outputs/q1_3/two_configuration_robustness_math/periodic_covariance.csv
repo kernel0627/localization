@@ -1,0 +1,13 @@
+noise_kind,gain,phase,slot,statistic,root_expected_rms_squared_m,trace_covariance_m2,minimum_covariance_eigenvalue_m2,periodic_relative_residual,bearing_std_deg,covariance_unit,source
+iid_per_ray_bearing,0.5,559,559,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.0036912099748462554,0.00012262527970564044,6.041343409004614e-07,1.9616162669777174e-16,0.001,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,0.5,560,560,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.003769330707958449,0.00012787068587362686,3.9734226704928186e-07,1.9616162669777174e-16,0.001,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,0.5,559,559,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.03691209974846255,0.012262527970564045,6.0413434090046175e-05,1.9616162669777174e-16,0.01,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,0.5,560,560,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.03769330707958449,0.012787068587362688,3.973422670492868e-05,1.9616162669777174e-16,0.01,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,0.5,559,559,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.3691209974846255,1.226252797056404,0.006041343409004619,1.9616162669777174e-16,0.1,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,0.5,560,560,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.37693307079584487,1.2787068587362687,0.003973422670492839,1.9616162669777174e-16,0.1,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,1.0,559,559,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.007370707640265468,0.0004889459800644097,1.0026972781549554e-06,1.6383515006649134e-16,0.001,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,1.0,560,560,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.007725304330851395,0.0005371229430384418,6.126862958034776e-07,1.6383515006649134e-16,0.001,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,1.0,559,559,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.07370707640265468,0.048894598006440984,0.00010026972781549468,1.6383515006649134e-16,0.01,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,1.0,560,560,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.07725304330851396,0.053712294303844194,6.126862958034848e-05,1.6383515006649134e-16,0.01,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,1.0,559,559,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.7370707640265468,4.889459800644097,0.010026972781549407,1.6383515006649134e-16,0.1,m^2,periodic_unit_per_radian2
+iid_per_ray_bearing,1.0,560,560,sqrt(E[geometric_RMS_m^2]); FY01-FY09 denominator 9,0.7725304330851396,5.371229430384419,0.006126862958034862,1.6383515006649134e-16,0.1,m^2,periodic_unit_per_radian2

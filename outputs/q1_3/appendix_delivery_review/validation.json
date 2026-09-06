@@ -1,0 +1,145 @@
+{
+  "verified_runs": 1515,
+  "bootstrap_runs": 1010,
+  "schedule_runs": 505,
+  "independently_verified_main_pairs": 505,
+  "checks": "Current source hashes, per-run fingerprints, coordinate metrics with nine-aircraft RMS, roles, fixed references, cumulative motion and transmitter uses, first precision events; schedule positions independently rebuilt from command records and deterministic actuator-error stream.",
+  "summary": [
+    {
+      "method": "A15_B6",
+      "condition": "actuation_1pct",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 1,
+      "median_max_error_m": 0.07869719307456571,
+      "p95_max_error_m": 0.2060887589840814
+    },
+    {
+      "method": "A15_B6",
+      "condition": "bearing_0.001deg",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 0,
+      "median_max_error_m": 0.07476363559494342,
+      "p95_max_error_m": 0.2087067967473096
+    },
+    {
+      "method": "A15_B6",
+      "condition": "bearing_0.01deg",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 0,
+      "median_max_error_m": 0.1295513664507616,
+      "p95_max_error_m": 0.31683056778939533
+    },
+    {
+      "method": "A15_B6",
+      "condition": "bearing_0.1deg",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 0,
+      "median_max_error_m": 1.145178370635569,
+      "p95_max_error_m": 1.8269143209187269
+    },
+    {
+      "method": "A15_B6",
+      "condition": "exact",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 1,
+      "median_max_error_m": 0.07847627699590164,
+      "p95_max_error_m": 0.20773487607537472
+    },
+    {
+      "method": "A23_B6",
+      "condition": "actuation_1pct",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 99,
+      "median_max_error_m": 0.00430510228724541,
+      "p95_max_error_m": 0.00776204339550123
+    },
+    {
+      "method": "A23_B6",
+      "condition": "bearing_0.001deg",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 40,
+      "median_max_error_m": 0.011009187867867328,
+      "p95_max_error_m": 0.02086652309454044
+    },
+    {
+      "method": "A23_B6",
+      "condition": "bearing_0.01deg",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 0,
+      "median_max_error_m": 0.1123016429139477,
+      "p95_max_error_m": 0.2069235477715433
+    },
+    {
+      "method": "A23_B6",
+      "condition": "bearing_0.1deg",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 0,
+      "median_max_error_m": 1.1158179122229783,
+      "p95_max_error_m": 2.0656380960563974
+    },
+    {
+      "method": "A23_B6",
+      "condition": "exact",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 99,
+      "median_max_error_m": 0.004312548404247749,
+      "p95_max_error_m": 0.007895538287048903
+    },
+    {
+      "method": "appendix1",
+      "condition": "actuation_1pct",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 100,
+      "median_max_error_m": 1.6175212252521098e-06,
+      "p95_max_error_m": 2.1487801389611573e-06
+    },
+    {
+      "method": "appendix1",
+      "condition": "bearing_0.001deg",
+      "random_runs": 100,
+      "completed_count": 0,
+      "terminal_below_1cm_count": 99,
+      "median_max_error_m": 0.006144025845653312,
+      "p95_max_error_m": 0.009025656428828872
+    },
+    {
+      "method": "appendix1",
+      "condition": "bearing_0.01deg",
+      "random_runs": 100,
+      "completed_count": 0,
+      "terminal_below_1cm_count": 0,
+      "median_max_error_m": 0.062021088765074894,
+      "p95_max_error_m": 0.09079450852596545
+    },
+    {
+      "method": "appendix1",
+      "condition": "bearing_0.1deg",
+      "random_runs": 100,
+      "completed_count": 0,
+      "terminal_below_1cm_count": 0,
+      "median_max_error_m": 0.6189863202980275,
+      "p95_max_error_m": 0.9072594017221719
+    },
+    {
+      "method": "appendix1",
+      "condition": "exact",
+      "random_runs": 100,
+      "completed_count": 100,
+      "terminal_below_1cm_count": 100,
+      "median_max_error_m": 1.640800558275997e-06,
+      "p95_max_error_m": 2.10295153987023e-06
+    }
+  ],
+  "verifier_sha256": "d1e6529f3dd6e39f44f535064c7a9af7483d78e50623967f4369382bbd056500"
+}

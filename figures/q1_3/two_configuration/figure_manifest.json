@@ -1,0 +1,50 @@
+{
+  "default_case": "gain_0.5",
+  "exports_sha256": {
+    "main_vs_two_precision_cost.png": "5024997162a17bcaad7f1ffbc6998e4a9d436ae88a3616b5e699978024fc2f44",
+    "radial_tangential_coupling.png": "ad53a2e45ccde7d1b031425bfbf135154d6080b24e4a759373f6022089c57bcd",
+    "random_terminal_stop_noise.png": "0c32a0cd123be19d380116c7142cf01158210e5d6f684b4f3962b6273d105d38",
+    "two_configuration_table1_formation_final.png": "b845c96702ba84214207e1230616cd1251693cff132988a4fdd3ec7484913fda"
+  },
+  "input_sha256": {
+    "appendix1/evaluation_560/summary.csv": "aead3486d107ef9ff6ae3102e862067b53512dc91245d9927c1e44ef3e7be6ac",
+    "outputs/q1_3/main_analysis/gain_0.5/slot_metrics.csv": "55cb4b3f2b43e0072d264aad4a1bb368e8dbaede4ac9ef06c56535d554e1c48b",
+    "outputs/q1_3/main_analysis/precision_costs.csv": "0815edb8d0cbe32f84843b448ab082298667befa25148fe9856f5c906448a5cf",
+    "outputs/q1_3/main_analysis/table1_evaluation.csv": "c76f3e388a4cdcdde0833e54ab715da7ff88fcceb6eacde342d7b18cc10b3dd0",
+    "outputs/q1_3/robustness/summary.csv": "7a914b5ead4e8f9f494ad561096b3bf44e2ccaaf8ae5695724a909ade4abaa6c",
+    "outputs/q1_3/two_configuration_analysis/gain_0.5/slot_metrics.csv": "b0862cc526f9c463e50178c5bd70712ccfb2c7343f131796e06fb5b90619d7af",
+    "outputs/q1_3/two_configuration_analysis/gain_0.5/summary.json": "38f32b812c15aeedbec8efff751a07bc31ebf3ee096ded5fe9ba8f69b1aa8b30",
+    "outputs/q1_3/two_configuration_analysis/noise_validation.csv": "ce16dadaa5a626df72f99d986260019d196476b5c9c6d839ee99c720c8144d88",
+    "outputs/q1_3/two_configuration_analysis/phase_noise_predictions.csv": "c2b5c667c688219ec600924450763908d0258d40d98c9347104497a019d850d4",
+    "outputs/q1_3/two_configuration_analysis/precision_costs.csv": "0f0e4d4de7457076c0fdf837c501197ab9e456311dcaf417f61676167e4d673f",
+    "outputs/q1_3/two_configuration_analysis/radial_tangential_blocks.csv": "0f5a2abdb3d618a90d2365a1b626c4d80bca869d634363502af394537ce87902",
+    "outputs/q1_3/two_configuration_analysis/table1_evaluation.csv": "c63e76964f271e08a520f342f74cbd90ce46932e9ffe66318c56815e69dfc4da",
+    "outputs/q1_3/two_configuration_review/component_audit.json": "a50c2d8184755b7a9765f6ee84c4d94927bf8ee41dcd6cf61f524a8ebefbe64d",
+    "scripts/figure_style.py": "e900c0fd24702554bca4264f735464ae4e71f718703c37581d699d823c32c23a"
+  },
+  "noise_statistic": "FY01–FY09 的几何均方根平方取平均后开方，分母为 9，并在相同相位比较",
+  "plot_data_sha256": {
+    "data/main_vs_two_precision_cost_data.csv": "d5e21c38cf3354357bf4f2b1b86b7ce47987a7b291a664d47a5508102a9e05e2",
+    "data/radial_tangential_coupling_data.csv": "37935935e1bdbe1d99658f388b1253b32ad365013dbe6474c61db90df9291099",
+    "data/random_terminal_stop_noise_data.csv": "b518b8bfffc80dcc2d24c9b38c25d999ebc44ac37560830ac2cdbcb4fbdd3282",
+    "data/table1_formation_final_data.csv": "73e3d673cba245a1e23bde483be932dfbde7bedf66e5c025aaf2cec7fb109552"
+  },
+  "plotting_script_sha256": "c90f3fa02fe4142028dcddf4baca620ae838b546a3792913dcda1d9de09d7c89",
+  "style": {
+    "axes_label_size_pt": 9.5,
+    "axes_line_width_pt": 0.8,
+    "chinese_font": "Source Han Sans SC",
+    "dpi": 300,
+    "font_size_pt": 9,
+    "fonts": {
+      "assets/fonts/source-han-sans/SourceHanSansSC-Bold.otf": "df2b90f5bcc6d01dfc964cec5f6d535d6b6aebd26ed7fd79a9c1b3f2112fcb6b",
+      "assets/fonts/source-han-sans/SourceHanSansSC-Regular.otf": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256"
+    },
+    "latin_font": "Arial",
+    "main_line_width_pt": 1.3,
+    "panel_title_size_pt": 10,
+    "style_script_path": "scripts/figure_style.py",
+    "style_script_sha256": "e900c0fd24702554bca4264f735464ae4e71f718703c37581d699d823c32c23a",
+    "tick_legend_size_pt": 8.5
+  }
+}

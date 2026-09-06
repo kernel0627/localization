@@ -1,0 +1,28 @@
+{
+  "created_at_utc": "2026-09-06T02:34:05.938599+00:00",
+  "input_trials": "outputs/q1_3/two_configuration_robustness/trials.csv",
+  "input_trials_sha256": "8d5cec3a4b99894086d05779d65611d3bbff629db5054d206dfe870d6b5c5366",
+  "report_script_sha256": "fc8a925ce3bcf593d585a40f4b6800c25472afd43971eaa8503bce4493789d11",
+  "coverage": {
+    "random_rows": 1600,
+    "expected_random_rows": 1600,
+    "table1_rows": 16,
+    "expected_table1_rows": 16,
+    "missing_groups": [],
+    "incomplete_trial_ids": {},
+    "duplicates": [],
+    "unknown_gain_condition": [],
+    "full_16x100_coverage": true,
+    "missing_table1_keys": [],
+    "duplicate_table1_keys": []
+  },
+  "source_ledger": "source_provenance.csv",
+  "math_dir": "outputs/q1_3/two_configuration_robustness_math",
+  "runner_contract_sha256": "30e5e45cb75ae0385a0a25373c812429e78413c6dc513de9b8e07672a5347ba8",
+  "runner_source_hashes_sha256": "5fd96a8230bb2b1ecd144daf2c2dabdd047b51acc914270ff630e8ff0c08ee3a",
+  "nonlinear_noise_injection_audit": {
+    "path": "outputs/q1_3/two_configuration_robustness_review/nonlinear_noise_injection_audit.json",
+    "sha256": "070d4f911465a89fc07100ea05f1637447c72313b27b3989629c7621cb0d9de7"
+  },
+  "allow_partial": false
+}

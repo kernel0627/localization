@@ -1,0 +1,60 @@
+{
+  "review_scope": "Static audit of scripts/q1_3/report_two_configuration_robustness.py plus completed-artifact checks available before the aggregate two-configuration trials.csv is rebuilt. No report script or runner was modified.",
+  "aggregate_input_state": {
+    "two_configuration_trials_csv_present": false,
+    "consequence": "Full 16 condition by 100 trial report statistics, final recommendation rows, and the 15 shared-condition cells were not recomputed in this review. The report's default mode is designed to refuse that partial input."
+  },
+  "completed_artifact_checks": {
+    "frozen_main_rows_recomputed": 505,
+    "frozen_main_conditions": [
+      "exact",
+      "bearing_0.001deg",
+      "bearing_0.01deg",
+      "bearing_0.1deg",
+      "actuation_1pct"
+    ],
+    "frozen_main_rate_counts": {
+      "exact": {"stopped": 100, "terminal_below_1cm": 100},
+      "bearing_0.001deg": {"stopped": 0, "terminal_below_1cm": 78},
+      "bearing_0.01deg": {"stopped": 0, "terminal_below_1cm": 0},
+      "bearing_0.1deg": {"stopped": 0, "terminal_below_1cm": 0},
+      "actuation_1pct": {"stopped": 100, "terminal_below_1cm": 100}
+    },
+    "frozen_main_continuous_summary_differences": [],
+    "new_cached_trial_summary_snapshot": 1084,
+    "new_cached_required_evaluation_fields_present": true,
+    "new_cached_evaluation_matches_saved_final_metrics": true
+  },
+  "static_checks": [
+    {
+      "name": "coverage_gate",
+      "result": "pass",
+      "evidence": "Default report mode requires exactly 1616 rows, 1600 random rows, 16 table-1 rows, each gain-condition group to contain trials 0..99 exactly once, and no unknown gain-condition pair."
+    },
+    {
+      "name": "rates_and_event_denominators",
+      "result": "pass",
+      "evidence": "Stop, terminal precision, and joint-success rates use every random trial in the group. First and sustained threshold times retain missing values and report hit counts separately; a budget value of 560 is never substituted for a missing first event."
+    },
+    {
+      "name": "gain_0.5_vs_gain_1_pairing",
+      "result": "pass",
+      "evidence": "The gain bootstrap intersects trial IDs within each condition, resamples paired trial differences, and restricts first-event time contrasts to trials where both events exist."
+    },
+    {
+      "name": "main_vs_two_configuration_pairing",
+      "result": "pass",
+      "evidence": "The three-way comparison reads main only from outputs/q1_3/robustness/trials.csv, is restricted to the five original shared conditions, intersects matching trial IDs, and labels the main source in every paired row."
+    },
+    {
+      "name": "recommendation_interpretation",
+      "result": "nonblocking_limit",
+      "evidence": "conclusion_lines ranks only gain 0.5 versus gain 1 within each condition by a stated point-estimate ordering. It does not use bootstrap intervals as a decision rule. The prose should call this a contract-specific ordered candidate, cite the paired-bootstrap table, and avoid describing overlapping finite-sample differences as a statistically established gain advantage. The exact-condition special case appropriately uses observed stop cost after both gains complete every trial."
+    }
+  ],
+  "final_acceptance_pending": [
+    "After the 1616-row trials.csv exists, rerun the report in default mode and independently recompute the 15 main-common method-condition cells from raw CSV.",
+    "Check the produced gain and main paired-bootstrap CSVs retain the expected 100 shared trial IDs for all applicable full groups.",
+    "Review recommendation wording against the final paired interval rows."
+  ]
+}

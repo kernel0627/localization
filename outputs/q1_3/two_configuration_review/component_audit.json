@@ -1,0 +1,132 @@
+{
+  "scope": "Offline small-error active feedback, gain 0.5, no hold; block norms at different period lengths cannot be directly ranked. Same-horizon norms apply only locally and do not predict Table 1 cost.",
+  "blocks": [
+    {
+      "method": "main",
+      "period_slots": 28,
+      "output_component": "radial",
+      "input_component": "radial",
+      "operator_norm": 1.2605932848335384
+    },
+    {
+      "method": "main",
+      "period_slots": 28,
+      "output_component": "radial",
+      "input_component": "tangential",
+      "operator_norm": 0.5346159083645168
+    },
+    {
+      "method": "main",
+      "period_slots": 28,
+      "output_component": "tangential",
+      "input_component": "radial",
+      "operator_norm": 1.967491104481981
+    },
+    {
+      "method": "main",
+      "period_slots": 28,
+      "output_component": "tangential",
+      "input_component": "tangential",
+      "operator_norm": 0.847687612442926
+    },
+    {
+      "method": "two_configuration",
+      "period_slots": 2,
+      "output_component": "radial",
+      "input_component": "radial",
+      "operator_norm": 0.830812031082484
+    },
+    {
+      "method": "two_configuration",
+      "period_slots": 2,
+      "output_component": "radial",
+      "input_component": "tangential",
+      "operator_norm": 0.5052882324544177
+    },
+    {
+      "method": "two_configuration",
+      "period_slots": 2,
+      "output_component": "tangential",
+      "input_component": "radial",
+      "operator_norm": 0.424697170402006
+    },
+    {
+      "method": "two_configuration",
+      "period_slots": 2,
+      "output_component": "tangential",
+      "input_component": "tangential",
+      "operator_norm": 0.890339710357642
+    }
+  ],
+  "nonlinear_pulses": [
+    {
+      "method": "main",
+      "period_slots": 28,
+      "input_drone": 2,
+      "input_component": "radial",
+      "input_amplitude_m": 0.001,
+      "largest_cross_output_drone": 2,
+      "largest_cross_output_component": "tangential",
+      "signed_cross_output_m": 0.001104167284515789,
+      "linear_predicted_cross_output_m": 0.0011041774121373525,
+      "center_difference_max_error": 5.6659587355234464e-08,
+      "selection_changes": 0
+    },
+    {
+      "method": "main",
+      "period_slots": 28,
+      "input_drone": 4,
+      "input_component": "tangential",
+      "input_amplitude_m": 0.001,
+      "largest_cross_output_drone": 4,
+      "largest_cross_output_component": "radial",
+      "signed_cross_output_m": -8.182709635207175e-06,
+      "linear_predicted_cross_output_m": -8.182712429912978e-06,
+      "center_difference_max_error": 3.162390585856323e-08,
+      "selection_changes": 0
+    },
+    {
+      "method": "two_configuration",
+      "period_slots": 2,
+      "input_drone": 2,
+      "input_component": "radial",
+      "input_amplitude_m": 0.001,
+      "largest_cross_output_drone": 2,
+      "largest_cross_output_component": "tangential",
+      "signed_cross_output_m": -4.440892098500626e-14,
+      "linear_predicted_cross_output_m": -2.0464207378470858e-19,
+      "center_difference_max_error": 2.2204665134576915e-11,
+      "selection_changes": 0
+    },
+    {
+      "method": "two_configuration",
+      "period_slots": 2,
+      "input_drone": 4,
+      "input_component": "tangential",
+      "input_amplitude_m": 0.001,
+      "largest_cross_output_drone": 7,
+      "largest_cross_output_component": "radial",
+      "signed_cross_output_m": 0.0004330108269101629,
+      "linear_predicted_cross_output_m": 0.0004330127018922196,
+      "center_difference_max_error": 7.414724390031324e-11,
+      "selection_changes": 0
+    }
+  ],
+  "same_28_slot_horizon": [
+    {
+      "method": "main",
+      "slots": 28,
+      "operator_norm": 2.5422045494979355
+    },
+    {
+      "method": "two_configuration",
+      "slots": 28,
+      "operator_norm": 0.004687022128556959
+    }
+  ],
+  "source_sha256": {
+    "scripts/q1_3/review_two_configuration_components.py": "0e6b744d1a9419229ed541080dcc25393f83537d4818bd3facf0966503d31dc4",
+    "scripts/q1_3/local_adjustment.py": "9c8aac0e6881243fab17999ccbc36ec3722cab549f87a0d9ba69bd22ab262234",
+    "scripts/q1_3/analyze_iterative_reference.py": "fb531724b3f987d4bc906619959012e73607b48f6737d966339d1d3f71f0b606"
+  }
+}

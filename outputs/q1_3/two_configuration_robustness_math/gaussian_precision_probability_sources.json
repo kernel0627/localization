@@ -1,0 +1,14 @@
+{
+  "source_sha256": {
+    "script": "03e20fad4c76338fc576caebf263021833fc4eabad033afd3e7ad90d12d7f0d6",
+    "outputs/q1_3/two_configuration_robustness_math/iid_covariance_gain_0.5_phase_560_per_radian2.csv": "76fa4b4b52432610648d76442058785943592547725d942b596fb90155fd8a31",
+    "outputs/q1_3/two_configuration_robustness_math/fixed_link_bias_covariance_gain_0.5_phase_560_0.001deg.csv": "736cc654dce2107fdaa06366cc448c5025834b1d350b2b32c57c3c899f97fd4e",
+    "outputs/q1_3/two_configuration_robustness_math/iid_covariance_gain_1_phase_560_per_radian2.csv": "b12a87d70339f2c889318bea883779a109503054b6f007a6c5b3e3741c00e25e",
+    "outputs/q1_3/two_configuration_robustness_math/fixed_link_bias_covariance_gain_1_phase_560_0.001deg.csv": "8683b587891147cd76cf21fd87c7b426e23f274d28b736b9903465bf92f4e942"
+  },
+  "base_seed": 2026090617,
+  "samples": 200000,
+  "phase": 560,
+  "excluded_model": "Combined multiplicative execution noise: products are non-Gaussian, so this Gaussian probability calculation does not apply.",
+  "bound": "Pr(Emax_lin >= epsilon) <= min(1, sum_i exp(-epsilon^2/(2 lambda_max(P_ii)))); the union bound does not require drone blocks to be independent."
+}

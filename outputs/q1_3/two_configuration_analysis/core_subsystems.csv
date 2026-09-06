@@ -1,0 +1,4 @@
+gain,core_ids,other_ids,core_operator_norm,upper_right_operator_norm,upper_right_max_abs,expected_other_self_block_scalar,other_self_block_max_error_from_expected_I
+0.25,FY04-FY05-FY07-FY08,FY02-FY03-FY06-FY09,0.9357084109382332,0.0,0.0,0.5625,2.894416016933121e-16
+0.5,FY04-FY05-FY07-FY08,FY02-FY03-FY06-FY09,0.8930253489486798,0.0,0.0,0.25,3.1068392716009e-16
+1.0,FY04-FY05-FY07-FY08,FY02-FY03-FY06-FY09,1.241488553446502,0.0,0.0,0.0,4.239321202968154e-31

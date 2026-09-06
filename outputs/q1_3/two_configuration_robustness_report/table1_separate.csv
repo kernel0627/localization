@@ -1,0 +1,17 @@
+gain,condition,table1_run,status,stopped,final_below_1cm,final_below_1mm,joint_success_1cm,joint_success_1mm,budget_exhausted,fit_failed,max_position_error_m,rms_position_error_m,measurement_slots,transmitter_uses,movement_m,first_1cm_slot,sustained_1cm_from_slot,first_1mm_slot,sustained_1mm_from_slot,record_stays_1cm_after_first,record_stays_1mm_after_first
+0.5,exact,1,quiet_full_selected_cycle,True,True,True,True,True,False,False,1.5619488872821338e-06,6.274576564962714e-07,84,336,64.83850568491052,31,31,41,41,True,True
+0.5,bearing_0.001deg,1,budget_exhausted,False,True,False,False,False,True,False,0.006028274403247065,0.0038424884001900137,560,2240,74.18321883464964,32,508,,,False,False
+0.5,bearing_0.01deg,1,budget_exhausted,False,False,False,False,False,True,False,0.061592385413997364,0.039079797966185596,560,2240,159.8453279285072,,,,,False,False
+0.5,bearing_0.1deg,1,budget_exhausted,False,False,False,False,False,True,False,0.6162563239148586,0.3909907948215305,560,2240,1029.6201712097,,,,,False,False
+0.5,actuation_1pct,1,quiet_full_selected_cycle,True,True,True,True,True,False,False,1.6109871087741768e-06,6.444835538614221e-07,84,336,64.817313729694,31,31,41,41,True,True
+0.5,combined_0.001deg_1pct,1,budget_exhausted,False,True,False,False,False,True,False,0.006069834374120848,0.0038595460576797192,560,2240,74.16835716547078,32,508,,,False,False
+0.5,combined_0.01deg_1pct,1,budget_exhausted,False,False,False,False,False,True,False,0.06181828737831703,0.03921446827829557,560,2240,159.84431610868106,,,,,False,False
+0.5,link_bias_0.001deg,1,budget_exhausted,False,True,False,False,False,True,False,0.009238949647216036,0.005116290342563959,560,2240,68.09439149429141,29,29,,,True,False
+1.0,exact,1,quiet_full_selected_cycle,True,True,True,True,True,False,False,2.5618982671915015e-13,1.4911995775621936e-13,56,224,69.11816091994626,10,10,13,13,True,True
+1.0,bearing_0.001deg,1,budget_exhausted,False,False,False,False,False,True,False,0.01363118810934419,0.00826789758402706,560,2240,99.72003897548947,12,,,,False,False
+1.0,bearing_0.01deg,1,budget_exhausted,False,False,False,False,False,True,False,0.13972749194867995,0.08970472615372056,560,2240,373.960931918482,,,,,False,False
+1.0,bearing_0.1deg,1,budget_exhausted,False,False,False,False,False,True,False,1.3865415631265854,0.8947030183953526,560,2240,3127.071886939637,,,,,False,False
+1.0,actuation_1pct,1,quiet_full_selected_cycle,True,True,True,True,True,False,False,1.0143900810430905e-10,4.54357280974416e-11,54,216,68.83505562975019,9,9,11,11,True,True
+1.0,combined_0.001deg_1pct,1,budget_exhausted,False,False,False,False,False,True,False,0.013781235605596404,0.008280010161076608,560,2240,99.42781723482194,12,,,,False,False
+1.0,combined_0.01deg_1pct,1,budget_exhausted,False,False,False,False,False,True,False,0.14002982958087085,0.08976321824930535,560,2240,373.47833821361036,,,,,False,False
+1.0,link_bias_0.001deg,1,budget_exhausted,False,True,False,False,False,True,False,0.009785005110869327,0.005759195055276436,560,2240,79.55134215536954,9,9,,,True,False

@@ -1,0 +1,47 @@
+{
+  "trials_per_condition": 100,
+  "conditions": {
+    "exact": [
+      0.0,
+      0.0
+    ],
+    "bearing_0.001deg": [
+      0.001,
+      0.0
+    ],
+    "bearing_0.01deg": [
+      0.01,
+      0.0
+    ],
+    "bearing_0.1deg": [
+      0.1,
+      0.0
+    ],
+    "actuation_1pct": [
+      0.0,
+      0.01
+    ]
+  },
+  "settings": {
+    "radius_m": 100.0,
+    "gain": 0.5,
+    "radial_tolerance_m": 0.001,
+    "angular_tolerance_rad": 1e-05,
+    "consistency_tolerance_rad": 1e-05,
+    "selection_scale_rad": 0.001,
+    "max_radial_step_m": 5.0,
+    "max_angular_step_rad": 0.03490658503988659
+  },
+  "max_epochs": 20,
+  "initial_seed": 20260905,
+  "noise_seed_base": 2026090500,
+  "initial_distribution": "Independent dr U[-12,12] m and dtheta U[-0.3,0.3] deg for FY02..09; calibrated FY00/FY01 fixed. Same initial states and indexed standard noise across conditions.",
+  "success": "Protocol stopped within 560 slots AND final Emax < 0.01 m. All failures included.",
+  "source_sha256": {
+    "local_adjustment.py": "9c8aac0e6881243fab17999ccbc36ec3722cab549f87a0d9ba69bd22ab262234",
+    "simulation_noise.py": "6cf37217adeb0227bdfe81a1de44a607a6af7cf59a46bae3a88f74912d3defd7",
+    "run_iterative_reference_baseline.py": "7dff6cdef2e038cae1e7ff03767ab1909766a1eb4ee2da83fcdca47fa2833464",
+    "run_robustness.py": "820d25f5a20677534dbdf600270b7dba5870cafb4955440113d82b99e259618f"
+  },
+  "fingerprint": "4cb0b3b255ccb86138a2af5f0ac7f953e8aaf08c6cf2fab2f854f740e90d13e3"
+}

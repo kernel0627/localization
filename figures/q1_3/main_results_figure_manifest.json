@@ -1,0 +1,30 @@
+{
+  "exports_sha256": {
+    "main_convergence_cost.png": "a135cef19cf9a7a9b71183f899b9893edd5865cbbbffe2c6ea0f23a5754789d9",
+    "main_formation.png": "688f55c1e44aef060db57f2b4a47e288c1ff7aadb0286ad528fae90d2ade125e"
+  },
+  "input_sha256": {
+    "outputs/q1_3/error_history.csv": "55cb4b3f2b43e0072d264aad4a1bb368e8dbaede4ac9ef06c56535d554e1c48b",
+    "outputs/q1_3/positions.csv": "b9857e4658f5a67621a0baf2655966baa26999860255873504245aadbb6d349c",
+    "outputs/q1_3/summary.json": "cedf07b450a702bee99071782fe34ad95070f343dbbce4836364f1be104420f2",
+    "scripts/figure_style.py": "e900c0fd24702554bca4264f735464ae4e71f718703c37581d699d823c32c23a"
+  },
+  "plotting_script_sha256": "67776d55cbcebe97f961d782bba6f90b42b6d3905383b7141e05a2d810e23506",
+  "style": {
+    "axes_label_size_pt": 9.5,
+    "axes_line_width_pt": 0.8,
+    "chinese_font": "Source Han Sans SC",
+    "dpi": 300,
+    "font_size_pt": 9,
+    "fonts": {
+      "assets/fonts/source-han-sans/SourceHanSansSC-Bold.otf": "df2b90f5bcc6d01dfc964cec5f6d535d6b6aebd26ed7fd79a9c1b3f2112fcb6b",
+      "assets/fonts/source-han-sans/SourceHanSansSC-Regular.otf": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256"
+    },
+    "latin_font": "Arial",
+    "main_line_width_pt": 1.3,
+    "panel_title_size_pt": 10,
+    "style_script_path": "scripts/figure_style.py",
+    "style_script_sha256": "e900c0fd24702554bca4264f735464ae4e71f718703c37581d699d823c32c23a",
+    "tick_legend_size_pt": 8.5
+  }
+}

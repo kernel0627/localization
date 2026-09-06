@@ -1,0 +1,231 @@
+{
+  "nonlinear_cycle_probes": 64,
+  "checks": [
+    {
+      "gain": 0.5,
+      "direction": 0,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 3.562068384422483e-07,
+      "max_absolute_error_m_per_rad": 1.3801384167066999e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 0,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.0847951939105211e-07,
+      "max_absolute_error_m_per_rad": 4.19425425945974e-06
+    },
+    {
+      "gain": 0.5,
+      "direction": 1,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 4.1213243255736706e-07,
+      "max_absolute_error_m_per_rad": 1.643113385085826e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 1,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.2350032253439729e-07,
+      "max_absolute_error_m_per_rad": 4.914420337343017e-06
+    },
+    {
+      "gain": 0.5,
+      "direction": 2,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 4.6141851933434967e-07,
+      "max_absolute_error_m_per_rad": 1.224800761434608e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 2,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.3903699377820247e-07,
+      "max_absolute_error_m_per_rad": 3.6918888355330637e-06
+    },
+    {
+      "gain": 0.5,
+      "direction": 3,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 5.371154161596599e-07,
+      "max_absolute_error_m_per_rad": 1.8549393644207157e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 3,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.5980964837301769e-07,
+      "max_absolute_error_m_per_rad": 5.51803987036692e-06
+    },
+    {
+      "gain": 0.5,
+      "direction": 4,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 8.820638594327627e-07,
+      "max_absolute_error_m_per_rad": 2.8202030016188928e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 4,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 3.3426507775104836e-07,
+      "max_absolute_error_m_per_rad": 1.3598411758408702e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 5,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 4.747181728038768e-07,
+      "max_absolute_error_m_per_rad": 1.6449242188798507e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 5,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.4158701209941395e-07,
+      "max_absolute_error_m_per_rad": 4.8437108368659665e-06
+    },
+    {
+      "gain": 0.5,
+      "direction": 6,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 4.5720794656007726e-07,
+      "max_absolute_error_m_per_rad": 2.0676098287708555e-05
+    },
+    {
+      "gain": 0.5,
+      "direction": 6,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.3885819944523852e-07,
+      "max_absolute_error_m_per_rad": 6.24319896758152e-06
+    },
+    {
+      "gain": 0.5,
+      "direction": 7,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 3.2167326782793705e-07,
+      "max_absolute_error_m_per_rad": 8.183217317991875e-06
+    },
+    {
+      "gain": 0.5,
+      "direction": 7,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 9.706652929114194e-08,
+      "max_absolute_error_m_per_rad": 2.442032013050266e-06
+    },
+    {
+      "gain": 1.0,
+      "direction": 0,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 6.41605526608397e-07,
+      "max_absolute_error_m_per_rad": 5.502419222125354e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 0,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 4.1007090067040106e-07,
+      "max_absolute_error_m_per_rad": 4.061081960049506e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 1,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 5.697390368025892e-07,
+      "max_absolute_error_m_per_rad": 4.7913173766289674e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 1,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.7095628420866422e-07,
+      "max_absolute_error_m_per_rad": 1.4377925111830336e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 2,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 7.807796041665022e-07,
+      "max_absolute_error_m_per_rad": 6.276910698943539e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 2,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 2.34697230812075e-07,
+      "max_absolute_error_m_per_rad": 1.8904935430441583e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 3,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 1.2006734722632465e-06,
+      "max_absolute_error_m_per_rad": 9.354834325847605e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 3,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 3.607758127034709e-07,
+      "max_absolute_error_m_per_rad": 2.814051595123601e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 4,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 4.856378094952858e-07,
+      "max_absolute_error_m_per_rad": 4.8978760268880706e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 4,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 1.4576916813524836e-07,
+      "max_absolute_error_m_per_rad": 1.4680270293609965e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 5,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 9.78696449615751e-07,
+      "max_absolute_error_m_per_rad": 8.184049541171134e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 5,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 2.942073071238501e-07,
+      "max_absolute_error_m_per_rad": 2.4670226892453684e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 6,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 7.984062123908646e-07,
+      "max_absolute_error_m_per_rad": 6.395321167929069e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 6,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 2.392510828593219e-07,
+      "max_absolute_error_m_per_rad": 1.9160597616973973e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 7,
+      "step_rad": 1e-06,
+      "relative_derivative_error": 7.157948722600863e-07,
+      "max_absolute_error_m_per_rad": 3.955278987710642e-05
+    },
+    {
+      "gain": 1.0,
+      "direction": 7,
+      "step_rad": 3e-07,
+      "relative_derivative_error": 2.1444933378763064e-07,
+      "max_absolute_error_m_per_rad": 1.1900835077183203e-05
+    }
+  ],
+  "second_moment_operator_checks": 4,
+  "maximum_relative_derivative_error": 1.2006734722632465e-06
+}

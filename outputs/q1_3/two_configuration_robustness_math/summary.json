@@ -1,0 +1,38 @@
+{
+  "state_order": [
+    "FY02_dr_m",
+    "FY02_R_dtheta_m",
+    "FY03_dr_m",
+    "FY03_R_dtheta_m",
+    "FY04_dr_m",
+    "FY04_R_dtheta_m",
+    "FY05_dr_m",
+    "FY05_R_dtheta_m",
+    "FY06_dr_m",
+    "FY06_R_dtheta_m",
+    "FY07_dr_m",
+    "FY07_R_dtheta_m",
+    "FY08_dr_m",
+    "FY08_R_dtheta_m",
+    "FY09_dr_m",
+    "FY09_R_dtheta_m"
+  ],
+  "phase_convention": "The stationary state before phase 1 is after phase 2. Thus phase 1 maps to slot 559 and phase 2 maps to slot 560.",
+  "rms_statistic": "sqrt(E[geometric_RMS_m^2]) = sqrt(trace(P)/9), including FY01 and excluding fixed FY00; denominator remains 9.",
+  "scope": "Frozen nominal branch with active control, no limiting, branch switching, or receiver hold. White bearing errors are independent by slot and receiver ray. Fixed receiver--TX link bias has one shared value across all uses of that link in a run.",
+  "source_sha256": {
+    "scripts/q1_3/analyze_two_configuration_robustness.py": "6fcad7a7fc9f66524b2f5f10011462d0bb500e4e0dc5e2cc75ed27b292c27e18",
+    "scripts/q1_3/analyze_two_configuration.py": "ce679d0e5a35703755b1a4f5061b1175f6360033715fd1594870a21a1995ffb1",
+    "scripts/q1_3/analyze_noise_floor.py": "b5a481780e9d3ef4a9c2841ba736a275fc737fcecb731480839a0a06d7ad4031",
+    "scripts/q1_3/analyze_iterative_reference.py": "fb531724b3f987d4bc906619959012e73607b48f6737d966339d1d3f71f0b606",
+    "scripts/q1_3/local_adjustment.py": "9c8aac0e6881243fab17999ccbc36ec3722cab549f87a0d9ba69bd22ab262234",
+    "docs/q1_3/双配置轮换鲁棒性执行方案.md": "e2bfe17ad5a1e16396b40cc9c3fc9dfee1a5e8cf3150347cef1f5158ba5aa48d"
+  },
+  "rows": {
+    "iid_periodic_covariance": 12,
+    "multiplicative_stability": 6,
+    "combined_stationary_moments": 8,
+    "fixed_link_bias_response": 4,
+    "operator_monte_carlo": 12
+  }
+}

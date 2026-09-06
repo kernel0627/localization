@@ -1,0 +1,170 @@
+{
+  "method": "receiver-local radial/angular bias estimation with public transmitter rotation",
+  "status": "quiet_full_cycle",
+  "settings": {
+    "radius_m": 100.0,
+    "gain": 0.25,
+    "radial_tolerance_m": 0.001,
+    "angular_tolerance_rad": 1e-05,
+    "consistency_tolerance_rad": 1e-05,
+    "selection_scale_rad": 0.001,
+    "max_radial_step_m": 5.0,
+    "max_angular_step_rad": 0.03490658503988659
+  },
+  "fixed_reference_ids": [
+    0,
+    1
+  ],
+  "schedule_period_slots": 28,
+  "epochs": 8,
+  "measurement_slots": 224,
+  "transmitter_uses": 896,
+  "total_endpoint_displacement_m": 95.76738478278543,
+  "last_motion_slot": 189,
+  "post_motion_confirmation_slots": 35,
+  "post_motion_transmitter_uses": 140,
+  "slots_with_motion": 188,
+  "receiver_decisions": 1344,
+  "nonzero_receiver_moves": 1057,
+  "failed_local_fits": 0,
+  "local_hold_rule": "enter after 21 consecutive own observations at half tolerance; resume when any local indicator exceeds full tolerance",
+  "termination": "a full 28-slot period with every receiver locally within tolerance; actual coordinates are used only for retrospective metrics",
+  "initial_metrics": {
+    "slot": 0,
+    "epoch": 0,
+    "transmitters": "",
+    "transmitter_uses": 0,
+    "cumulative_transmitter_uses": 0,
+    "endpoint_displacement_m": 0.0,
+    "cumulative_endpoint_displacement_m": 0.0,
+    "max_position_error_m": 12.01113974324003,
+    "rms_position_error_m": 7.414802070024728,
+    "max_radial_error_m": 12.000000000000014,
+    "max_angular_error_deg": 0.2799999999999826,
+    "max_adjacent_gap_error_deg": 0.45999999999999375
+  },
+  "final_metrics": {
+    "slot": 224,
+    "epoch": 8,
+    "transmitters": "0-1-8-9",
+    "transmitter_uses": 4,
+    "cumulative_transmitter_uses": 896,
+    "endpoint_displacement_m": 0.0,
+    "cumulative_endpoint_displacement_m": 95.76738478278543,
+    "max_position_error_m": 0.00015227360527492228,
+    "rms_position_error_m": 0.0001054899768336792,
+    "max_radial_error_m": 6.815272006122086e-05,
+    "max_angular_error_deg": 7.802008655444764e-05,
+    "max_adjacent_gap_error_deg": 7.161987328885289e-05
+  },
+  "epoch_history": [
+    {
+      "epoch": 0,
+      "slot": 0,
+      "max_position_error_m": 12.01113974324003,
+      "rms_position_error_m": 7.414802070024728,
+      "max_radial_error_m": 12.000000000000014,
+      "max_angular_error_deg": 0.2799999999999826,
+      "max_adjacent_gap_error_deg": 0.45999999999999375
+    },
+    {
+      "epoch": 1,
+      "slot": 28,
+      "max_position_error_m": 0.8400387326439401,
+      "rms_position_error_m": 0.4638629352963316,
+      "max_radial_error_m": 0.3468713412026432,
+      "max_angular_error_deg": 0.4468480985418048,
+      "max_adjacent_gap_error_deg": 0.44684809854181395
+    },
+    {
+      "epoch": 2,
+      "slot": 56,
+      "max_position_error_m": 0.17022093753398493,
+      "rms_position_error_m": 0.09426077159475596,
+      "max_radial_error_m": 0.06498841808726752,
+      "max_angular_error_deg": 0.09164692462830214,
+      "max_adjacent_gap_error_deg": 0.09164692462830715
+    },
+    {
+      "epoch": 3,
+      "slot": 84,
+      "max_position_error_m": 0.03562870342332526,
+      "rms_position_error_m": 0.01982774416085697,
+      "max_radial_error_m": 0.013745066452401034,
+      "max_angular_error_deg": 0.0191831310391071,
+      "max_adjacent_gap_error_deg": 0.019183131039106627
+    },
+    {
+      "epoch": 4,
+      "slot": 112,
+      "max_position_error_m": 0.007219677458883733,
+      "rms_position_error_m": 0.003839236920846676,
+      "max_radial_error_m": 0.0025778385938366455,
+      "max_angular_error_deg": 0.00388712831968295,
+      "max_adjacent_gap_error_deg": 0.0038871283196684203
+    },
+    {
+      "epoch": 5,
+      "slot": 140,
+      "max_position_error_m": 0.0013013037637403756,
+      "rms_position_error_m": 0.0007061816342786896,
+      "max_radial_error_m": 0.00046564979091101577,
+      "max_angular_error_deg": 0.0007031662769623016,
+      "max_adjacent_gap_error_deg": 0.0007031662769421132
+    },
+    {
+      "epoch": 6,
+      "slot": 168,
+      "max_position_error_m": 0.00030146013293540295,
+      "rms_position_error_m": 0.00017431710368893285,
+      "max_radial_error_m": 0.00011044754691624803,
+      "max_angular_error_deg": 0.00016322757714340357,
+      "max_adjacent_gap_error_deg": 0.00016322757713282954
+    },
+    {
+      "epoch": 7,
+      "slot": 196,
+      "max_position_error_m": 0.00015227360527492228,
+      "rms_position_error_m": 0.0001054899768336792,
+      "max_radial_error_m": 6.815272006122086e-05,
+      "max_angular_error_deg": 7.802008655444764e-05,
+      "max_adjacent_gap_error_deg": 7.161987328885289e-05
+    },
+    {
+      "epoch": 8,
+      "slot": 224,
+      "max_position_error_m": 0.00015227360527492228,
+      "rms_position_error_m": 0.0001054899768336792,
+      "max_radial_error_m": 6.815272006122086e-05,
+      "max_angular_error_deg": 7.802008655444764e-05,
+      "max_adjacent_gap_error_deg": 7.161987328885289e-05
+    }
+  ],
+  "scope": "Exact angles and ideal relative radial/angular actuation; calibrated FY00/FY01. Each receiver uses its own six angles. Transmitter schedule is public and fixed; pair selection is local. Finite simulations do not prove general convergence.",
+  "precision_thresholds": [
+    {
+      "threshold": "2cm",
+      "threshold_m": 0.02,
+      "first_slot": 94,
+      "transmitter_uses_at_first": 376,
+      "endpoint_displacement_at_first_m": 95.60024035513568,
+      "all_recorded_slots_after_first_below": true
+    },
+    {
+      "threshold": "1cm",
+      "threshold_m": 0.01,
+      "first_slot": 103,
+      "transmitter_uses_at_first": 412,
+      "endpoint_displacement_at_first_m": 95.66611671300016,
+      "all_recorded_slots_after_first_below": true
+    },
+    {
+      "threshold": "1mm",
+      "threshold_m": 0.001,
+      "first_slot": 143,
+      "transmitter_uses_at_first": 572,
+      "endpoint_displacement_at_first_m": 95.75813115130148,
+      "all_recorded_slots_after_first_below": true
+    }
+  ]
+}

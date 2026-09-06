@@ -15,7 +15,7 @@ from scripts.q1_3.local_adjustment import (
     execute_relative_polar_step,
     public_schedule,
 )
-from scripts.q1_3.run_adjustment import simulate_adjustment
+from scripts.q1_3.run_iterative_reference_baseline import simulate_adjustment
 
 
 def nominal():
@@ -107,6 +107,26 @@ def test_table1_converges_using_local_stopping_and_keeps_transmitters_fixed():
         np.testing.assert_array_equal(
             states[slot, [0, *tx]], states[slot - 1, [0, *tx]]
         )
+    # Reconstruct resource costs independently from the full trajectory and roles.
+    distances = np.linalg.norm(np.diff(states, axis=0), axis=2).sum(axis=1)
+    assert summary["transmitter_uses"] == 4 * summary["measurement_slots"]
+    assert summary["total_endpoint_displacement_m"] == pytest.approx(distances.sum())
+    np.testing.assert_allclose(
+        [row["cumulative_endpoint_displacement_m"] for row in run["history"][1:]],
+        np.cumsum(distances),
+    )
+    for threshold in summary["precision_thresholds"]:
+        hit = next(
+            row
+            for row in run["history"]
+            if row["max_position_error_m"] < threshold["threshold_m"]
+        )
+        assert threshold["first_slot"] == hit["slot"]
+        assert threshold["transmitter_uses_at_first"] == 4 * hit["slot"]
+    assert (
+        summary["post_motion_transmitter_uses"]
+        == 4 * summary["post_motion_confirmation_slots"]
+    )
     last_cycle = run["steps"][-28 * 6 :]
     assert all(r["status"] == "within_tolerance" for r in last_cycle)
     np.testing.assert_array_equal(initial, np.array([table[i] for i in range(10)]))

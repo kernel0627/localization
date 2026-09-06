@@ -1,0 +1,61 @@
+{
+  "schedule": [
+    [
+      0,
+      1,
+      4,
+      5
+    ],
+    [
+      0,
+      1,
+      7,
+      8
+    ]
+  ],
+  "settings": {
+    "radius_m": 100.0,
+    "gain": 0.5,
+    "radial_tolerance_m": 0.001,
+    "angular_tolerance_rad": 1e-05,
+    "consistency_tolerance_rad": 1e-05,
+    "selection_scale_rad": 0.001,
+    "max_radial_step_m": 5.0,
+    "max_angular_step_rad": 0.03490658503988659
+  },
+  "state_order": [
+    "FY02_dr_m",
+    "FY02_R_dtheta_m",
+    "FY03_dr_m",
+    "FY03_R_dtheta_m",
+    "FY04_dr_m",
+    "FY04_R_dtheta_m",
+    "FY05_dr_m",
+    "FY05_R_dtheta_m",
+    "FY06_dr_m",
+    "FY06_R_dtheta_m",
+    "FY07_dr_m",
+    "FY07_R_dtheta_m",
+    "FY08_dr_m",
+    "FY08_R_dtheta_m",
+    "FY09_dr_m",
+    "FY09_R_dtheta_m"
+  ],
+  "information_boundary": "current receiver-local angles and own hold memory only; true positions and actions are simulator/offline analysis data",
+  "frozen_505_contract_fingerprint": "ba2bc99beedf9c6111b8a43d88d12a5d02ea8c297916040ef69da952f99e55be",
+  "frozen_505_contract_source_hashes": {
+    "appendix1/optimize_schedule.py": "679e36ec5aba8206a77571ca1d8e5eeb8b2c8664e2740415724b6dc9048041dc",
+    "appendix1/run_evaluation.py": "218b2f72f8ec192bbc6bd14f1fcc854e3e6d559a3476a8f5fc389e6d42bca116",
+    "scripts/q1_3/local_adjustment.py": "9c8aac0e6881243fab17999ccbc36ec3722cab549f87a0d9ba69bd22ab262234",
+    "scripts/q1_3/simulation_noise.py": "6cf37217adeb0227bdfe81a1de44a607a6af7cf59a46bae3a88f74912d3defd7",
+    "scripts/q1_3/run_robustness.py": "820d25f5a20677534dbdf600270b7dba5870cafb4955440113d82b99e259618f",
+    "scripts/q1_3/run_iterative_reference_baseline.py": "7dff6cdef2e038cae1e7ff03767ab1909766a1eb4ee2da83fcdca47fa2833464",
+    "scripts/q1_1/localization.py": "f18b955f8e2152d4df98aa21d6dc7cafddacde601f4dc5158c6a34d42c13a1d2",
+    "scripts/q1_2/run_validation.py": "abd4538fd3e01aa7aa6fc397ec4a56a47a5df64482d6fea4b70526329221bbe7",
+    "problem/B题.md": "04e879207de16e3474fe77ad3e967bceb27b94dd104137e049d5a98a9a8eef73"
+  },
+  "contract_validation": {
+    "trial_rows": 505,
+    "source_hashes_match": true
+  }
+}

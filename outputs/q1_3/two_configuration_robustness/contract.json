@@ -1,0 +1,122 @@
+{
+  "schedule": [
+    [
+      1,
+      4,
+      5
+    ],
+    [
+      1,
+      7,
+      8
+    ]
+  ],
+  "period_slots": 2,
+  "settings_by_gain": {
+    "0.5": {
+      "radius_m": 100.0,
+      "gain": 0.5,
+      "radial_tolerance_m": 0.001,
+      "angular_tolerance_rad": 1e-05,
+      "consistency_tolerance_rad": 1e-05,
+      "selection_scale_rad": 0.001,
+      "max_radial_step_m": 5.0,
+      "max_angular_step_rad": 0.03490658503988659
+    },
+    "1.0": {
+      "radius_m": 100.0,
+      "gain": 1.0,
+      "radial_tolerance_m": 0.001,
+      "angular_tolerance_rad": 1e-05,
+      "consistency_tolerance_rad": 1e-05,
+      "selection_scale_rad": 0.001,
+      "max_radial_step_m": 5.0,
+      "max_angular_step_rad": 0.03490658503988659
+    }
+  },
+  "max_slots": 560,
+  "trials_per_condition": 100,
+  "conditions": {
+    "exact": {
+      "bearing_std_deg": 0.0,
+      "actuation_relative_std": 0.0,
+      "link_bias_std_deg": 0.0
+    },
+    "bearing_0.001deg": {
+      "bearing_std_deg": 0.001,
+      "actuation_relative_std": 0.0,
+      "link_bias_std_deg": 0.0
+    },
+    "bearing_0.01deg": {
+      "bearing_std_deg": 0.01,
+      "actuation_relative_std": 0.0,
+      "link_bias_std_deg": 0.0
+    },
+    "bearing_0.1deg": {
+      "bearing_std_deg": 0.1,
+      "actuation_relative_std": 0.0,
+      "link_bias_std_deg": 0.0
+    },
+    "actuation_1pct": {
+      "bearing_std_deg": 0.0,
+      "actuation_relative_std": 0.01,
+      "link_bias_std_deg": 0.0
+    },
+    "combined_0.001deg_1pct": {
+      "bearing_std_deg": 0.001,
+      "actuation_relative_std": 0.01,
+      "link_bias_std_deg": 0.0
+    },
+    "combined_0.01deg_1pct": {
+      "bearing_std_deg": 0.01,
+      "actuation_relative_std": 0.01,
+      "link_bias_std_deg": 0.0
+    },
+    "link_bias_0.001deg": {
+      "bearing_std_deg": 0.0,
+      "actuation_relative_std": 0.0,
+      "link_bias_std_deg": 0.001
+    }
+  },
+  "initial_seed": 20260905,
+  "noise_seed_base": 2026090500,
+  "reused_runs": 505,
+  "new_runs": 1111,
+  "total_runs": 1616,
+  "reuse": {
+    "gain": 0.5,
+    "conditions": [
+      "bearing_0.001deg",
+      "exact",
+      "actuation_1pct",
+      "bearing_0.01deg",
+      "bearing_0.1deg"
+    ],
+    "archive": "appendix1/evaluation_560",
+    "verified": {
+      "trial_rows": 505,
+      "source_hashes_match": true
+    }
+  },
+  "information_boundary": "The controller uses only current local six angles, IDs and public two-slot schedule, ideal geometry, and its own hold memory. Initial truth, positions, link offsets, and execution errors remain simulator-private. Link offsets are keyed only by public receiver/transmitter IDs and never supplied to the controller.",
+  "white_noise": "Four ray directions receive independent per-slot errors before six pair angles are formed. Fixed link offsets use independent receiver-transmitter stream 2; white bearing stream 0 and execution stream 1 retain the old seeded streams.",
+  "blas_threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "source_sha256": {
+    "scripts/q1_3/run_two_configuration_robustness.py": "cc8f1b52a70186b91a795f27672c091c7d03f4537b23f31709c1b017c9a5da8e",
+    "scripts/q1_3/two_configuration_noise.py": "70f99b8105fed54c49b7381d044d230fd85ea0dcf3884b17c7eb09dfa5cb627a",
+    "appendix1/optimize_schedule.py": "679e36ec5aba8206a77571ca1d8e5eeb8b2c8664e2740415724b6dc9048041dc",
+    "scripts/q1_3/local_adjustment.py": "9c8aac0e6881243fab17999ccbc36ec3722cab549f87a0d9ba69bd22ab262234",
+    "scripts/q1_3/run_robustness.py": "820d25f5a20677534dbdf600270b7dba5870cafb4955440113d82b99e259618f",
+    "scripts/q1_3/simulation_noise.py": "6cf37217adeb0227bdfe81a1de44a607a6af7cf59a46bae3a88f74912d3defd7",
+    "scripts/q1_1/localization.py": "f18b955f8e2152d4df98aa21d6dc7cafddacde601f4dc5158c6a34d42c13a1d2",
+    "scripts/q1_2/run_validation.py": "abd4538fd3e01aa7aa6fc397ec4a56a47a5df64482d6fea4b70526329221bbe7"
+  },
+  "archive_contract_sha256": "2846a9a4c441ef52e21cbb2567317a1a067012bd9b07c8df3ce17911c0da49d9",
+  "archive_fingerprint": "ba2bc99beedf9c6111b8a43d88d12a5d02ea8c297916040ef69da952f99e55be",
+  "fingerprint": "f0225eb55bc34d565839cc2dc9e5d518c3df7b47d3505dc30e7e2f98fb671d31"
+}

@@ -1,0 +1,290 @@
+{
+  "fingerprint": "f0225eb55bc34d565839cc2dc9e5d518c3df7b47d3505dc30e7e2f98fb671d31",
+  "evaluation": {
+    "gain": 1.0,
+    "condition": "bearing_0.001deg",
+    "trial": 75,
+    "bearing_std_deg": 0.001,
+    "actuation_relative_std": 0.0,
+    "link_bias_std_deg": 0.0,
+    "status": "budget_exhausted",
+    "stopped": false,
+    "budget_exhausted": true,
+    "fit_failed": false,
+    "final_below_1cm": true,
+    "final_below_1mm": false,
+    "joint_success_1cm": false,
+    "joint_success_1mm": false,
+    "first_1cm_slot": 15,
+    "first_1cm_tx": 60,
+    "sustained_1cm_from_slot": 557,
+    "record_stays_1cm_after_first": false,
+    "first_1mm_slot": null,
+    "first_1mm_tx": null,
+    "sustained_1mm_from_slot": null,
+    "record_stays_1mm_after_first": false,
+    "max_position_error_m": 0.007070343705475498,
+    "rms_position_error_m": 0.004404353403619454,
+    "measurement_slots": 560,
+    "transmitter_uses": 2240,
+    "movement_m": 139.37199357550014,
+    "failed_local_fits": 0,
+    "seconds": 10.805263333997573,
+    "tail100_local_decisions": 600,
+    "tail100_nominal_selected_matches": 551,
+    "tail100_nominal_selected_match_rate": 0.9183333333333333,
+    "tail100_holding_count": 0,
+    "tail100_radial_clip_count": 0,
+    "tail100_angular_clip_count": 0
+  },
+  "initial_positions": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      100.0,
+      0.0
+    ],
+    [
+      74.55995392501924,
+      63.002254694919465
+    ],
+    [
+      16.836447332441235,
+      93.3203551746083
+    ],
+    [
+      -48.649981311854695,
+      84.80517222481703
+    ],
+    [
+      -105.24942587530772,
+      38.29370454770162
+    ],
+    [
+      -105.03826055071032,
+      -37.73387570017718
+    ],
+    [
+      -46.44457396707291,
+      -79.91978437879455
+    ],
+    [
+      17.443648683361946,
+      -100.03758605970184
+    ],
+    [
+      82.47862210896996,
+      -69.6178384801387
+    ]
+  ],
+  "final_positions": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      100.0,
+      0.0
+    ],
+    [
+      76.6095034819771,
+      64.27382188389839
+    ],
+    [
+      17.362236889369317,
+      98.47509890180075
+    ],
+    [
+      -50.00356144899811,
+      86.60581538762783
+    ],
+    [
+      -93.97151318257679,
+      34.2040382220896
+    ],
+    [
+      -93.9691056201425,
+      -34.19572663906909
+    ],
+    [
+      -50.001490901422734,
+      -86.60022063111214
+    ],
+    [
+      17.36267427798988,
+      -98.47963825619416
+    ],
+    [
+      76.60473736175001,
+      -64.27881276515112
+    ]
+  ],
+  "summary": {
+    "schedule": [
+      [
+        1,
+        4,
+        5
+      ],
+      [
+        1,
+        7,
+        8
+      ]
+    ],
+    "period_slots": 2,
+    "settings": {
+      "radius_m": 100.0,
+      "gain": 1.0,
+      "radial_tolerance_m": 0.001,
+      "angular_tolerance_rad": 1e-05,
+      "consistency_tolerance_rad": 1e-05,
+      "selection_scale_rad": 0.001,
+      "max_radial_step_m": 5.0,
+      "max_angular_step_rad": 0.03490658503988659
+    },
+    "local_hold_count": 21,
+    "max_slots": 560,
+    "status": "budget_exhausted",
+    "measurement_slots": 560,
+    "transmitter_uses": 2240,
+    "endpoint_m": 139.37199357550014,
+    "failed_fits": 0,
+    "receiver_decisions": 3360,
+    "nonzero_receiver_moves": 3360,
+    "slots_with_motion": 560,
+    "last_motion_slot": 560,
+    "confirmation_slots_after_last_motion": 0,
+    "final_max_error_m": 0.007070343705475498,
+    "peak_max_error_m": 11.99933431892752,
+    "initial_metrics": {
+      "slot": 0,
+      "transmitters": "",
+      "slot_transmitter_uses": 0,
+      "transmitter_uses": 0,
+      "cumulative_transmitter_uses": 0,
+      "endpoint_displacement_m": 0.0,
+      "cumulative_endpoint_m": 0.0,
+      "max_position_error_m": 11.99933431892752,
+      "rms_position_error_m": 6.988039533389537,
+      "max_radial_error_m": 11.99932792239673,
+      "max_angular_error_deg": 0.23971518438540917,
+      "max_adjacent_gap_error_deg": 0.424440106639949
+    },
+    "final_metrics": {
+      "slot": 560,
+      "transmitters": "0-1-7-8",
+      "slot_transmitter_uses": 4,
+      "transmitter_uses": 2240,
+      "cumulative_transmitter_uses": 2240,
+      "endpoint_displacement_m": 0.024532045762886822,
+      "cumulative_endpoint_m": 139.37199357550014,
+      "max_position_error_m": 0.007070343705475498,
+      "rms_position_error_m": 0.004404353403619454,
+      "max_radial_error_m": 0.006038314696141356,
+      "max_angular_error_deg": 0.00403103365819212,
+      "max_adjacent_gap_error_deg": 0.0049225935408898636
+    },
+    "initial_positions": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        100.0,
+        0.0
+      ],
+      [
+        74.55995392501924,
+        63.002254694919465
+      ],
+      [
+        16.836447332441235,
+        93.3203551746083
+      ],
+      [
+        -48.649981311854695,
+        84.80517222481703
+      ],
+      [
+        -105.24942587530772,
+        38.29370454770162
+      ],
+      [
+        -105.03826055071032,
+        -37.73387570017718
+      ],
+      [
+        -46.44457396707291,
+        -79.91978437879455
+      ],
+      [
+        17.443648683361946,
+        -100.03758605970184
+      ],
+      [
+        82.47862210896996,
+        -69.6178384801387
+      ]
+    ],
+    "final_positions": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        100.0,
+        0.0
+      ],
+      [
+        76.6095034819771,
+        64.27382188389839
+      ],
+      [
+        17.362236889369317,
+        98.47509890180075
+      ],
+      [
+        -50.00356144899811,
+        86.60581538762783
+      ],
+      [
+        -93.97151318257679,
+        34.2040382220896
+      ],
+      [
+        -93.9691056201425,
+        -34.19572663906909
+      ],
+      [
+        -50.001490901422734,
+        -86.60022063111214
+      ],
+      [
+        17.36267427798988,
+        -98.47963825619416
+      ],
+      [
+        76.60473736175001,
+        -64.27881276515112
+      ]
+    ],
+    "termination": "a completed 2-slot public period in which every receiver that received reported its own local hold; this aggregate is a simulator log, not cross-receiver coordination",
+    "simulation_noise": {
+      "bearing_std_deg": 0.001,
+      "actuation_relative_std": 0.0,
+      "link_bias_std_deg": 0.0,
+      "seed": 2026090576
+    },
+    "first_1cm_slot": 15,
+    "uses_at_1cm": 60,
+    "endpoint_at_1cm_m": 110.02722024366692,
+    "stays_below_1cm": false,
+    "first_1mm_slot": null,
+    "uses_at_1mm": null,
+    "endpoint_at_1mm_m": null,
+    "stays_below_1mm": false
+  }
+}

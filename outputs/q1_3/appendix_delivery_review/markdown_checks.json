@@ -1,0 +1,18 @@
+{
+  "files": [
+    "appendix/README.md",
+    "appendix/VALIDATION.md",
+    "appendix1/README.md",
+    "appendix1/VALIDATION.md",
+    "docs/q1_3/appendix双路线执行方案.md",
+    "docs/q1_3/appendix双路线验收.md",
+    "docs/q1_3/appendix信息条件审查.md"
+  ],
+  "checks": [
+    "code-stripped dollar balance",
+    "legacy delimiter absence",
+    "bare LaTeX absence",
+    "local link target existence"
+  ],
+  "issues": []
+}

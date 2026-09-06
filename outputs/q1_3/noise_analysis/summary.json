@@ -1,0 +1,20 @@
+{
+  "gain": 0.5,
+  "lyapunov_relative_residual": 2.1797688868233914e-15,
+  "minimum_covariance_eigenvalue": 870.4368167897031,
+  "scope": "Frozen nominal reference branches, active feedback, no limiting or hold, infinitesimal independent per-ray Gaussian noise. sqrt(E[RMS^2]) at phase 28, not median RMS or maximum error. Finite-noise switching can invalidate approximation.",
+  "predictions": [
+    {
+      "bearing_std_deg": 0.001,
+      "predicted_root_expected_rms_squared_m": 0.004542727620151138
+    },
+    {
+      "bearing_std_deg": 0.01,
+      "predicted_root_expected_rms_squared_m": 0.04542727620151138
+    },
+    {
+      "bearing_std_deg": 0.1,
+      "predicted_root_expected_rms_squared_m": 0.45427276201511374
+    }
+  ]
+}

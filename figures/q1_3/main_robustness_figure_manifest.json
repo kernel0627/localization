@@ -1,0 +1,31 @@
+{
+  "plot_script_sha256": "dfc6511d422a33c812779aaa66b75e8822ce5b8387bf1346148de8594f96f5c6",
+  "style": {
+    "style_script_path": "scripts/figure_style.py",
+    "style_script_sha256": "e900c0fd24702554bca4264f735464ae4e71f718703c37581d699d823c32c23a",
+    "fonts": {
+      "assets/fonts/source-han-sans/SourceHanSansSC-Regular.otf": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256",
+      "assets/fonts/source-han-sans/SourceHanSansSC-Bold.otf": "df2b90f5bcc6d01dfc964cec5f6d535d6b6aebd26ed7fd79a9c1b3f2112fcb6b"
+    },
+    "chinese_font": "Source Han Sans SC",
+    "latin_font": "Arial",
+    "dpi": 300,
+    "font_size_pt": 9,
+    "axes_label_size_pt": 9.5,
+    "tick_legend_size_pt": 8.5,
+    "panel_title_size_pt": 10,
+    "main_line_width_pt": 1.3,
+    "axes_line_width_pt": 0.8
+  },
+  "formats": [
+    "png"
+  ],
+  "artifacts_sha256": {
+    "figures/q1_3/main_robustness.png": "745b333aa6c27ae04b294155d351312f47d8bdcea47fcb1640ac117faa448ab3",
+    "figures/q1_3/main_noise_trajectories.png": "85b171f22a613e2a2028a5ed8d69065073e5160a4a843bb07ff08986baf57343"
+  },
+  "plot_data_sha256": {
+    "outputs/q1_3/robustness/noise_floor_comparison.csv": "b1bd8faa384e363b7446e46fd2369723c5180e5a86eadae8bcfb0c2941f974f0",
+    "outputs/q1_3/robustness/trajectory_quantiles.csv": "22a29eb7c962ad529c7704afc1b96a794cc8925695079378177d6bb96096d7fa"
+  }
+}

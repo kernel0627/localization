@@ -1,0 +1,8 @@
+case,gain,max_radial_step_m,max_angular_step_deg,status,measurement_slots,transmitter_uses,total_endpoint_displacement_m,last_motion_slot,post_motion_confirmation_slots,failed_fits,max_position_error_m,rms_position_error_m
+gain_0.25,0.25,5.0,2.0,quiet_full_selected_cycle,146,584,66.42800309705325,144,2,0,5.85681854740001e-05,2.5558601606618545e-05
+gain_0.5,0.5,5.0,2.0,quiet_full_selected_cycle,84,336,64.83850568491052,82,2,0,1.5619488872821338e-06,6.274576564962714e-07
+gain_1,1.0,5.0,2.0,quiet_full_selected_cycle,56,224,69.11816091994626,13,43,0,2.5618982671915015e-13,1.4911995775621936e-13
+radial_limit_2.5m,0.5,2.5,2.0,quiet_full_selected_cycle,86,344,67.90491537360401,84,2,0,2.0912681660759786e-06,8.063061778157743e-07
+radial_limit_10m,0.5,10.0,2.0,quiet_full_selected_cycle,84,336,64.90836403734502,82,2,0,1.5619488872821338e-06,6.274576590341055e-07
+angular_limit_1deg,0.5,5.0,1.0,quiet_full_selected_cycle,84,336,63.962017225508475,82,2,0,1.5619488872821338e-06,6.274576531657821e-07
+angular_limit_4deg,0.5,5.0,4.0,quiet_full_selected_cycle,84,336,64.83850568491052,82,2,0,1.5619488872821338e-06,6.274576564962714e-07

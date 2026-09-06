@@ -1,0 +1,28 @@
+ERROR conda.cli.main_run:execute(148): `conda run ruff check --output-format concise scripts/q1_3/audit_appendix_information.py scripts/q1_3/verify_appendix_delivery.py appendix/run_fixed_budget.py appendix/verify_fixed_budget.py appendix/test_fixed_budget.py appendix1/optimize_schedule.py appendix1/run_evaluation.py appendix1/verify_evaluation.py appendix1/test_semantics.py appendix1/resume_evaluation.py` failed. (See above for error)
+appendix/run_fixed_budget.py:15:25: F401 [*] `dataclasses.asdict` imported but unused
+appendix/run_fixed_budget.py:28:1: E402 Module level import not at top of file
+appendix/run_fixed_budget.py:28:52: F401 [*] `scripts.q1_1.localization.pairwise_angles` imported but unused
+appendix/run_fixed_budget.py:29:1: E402 Module level import not at top of file
+appendix/run_fixed_budget.py:29:41: F401 [*] `scripts.q1_2.run_validation.table_positions` imported but unused
+appendix/run_fixed_budget.py:30:1: E402 Module level import not at top of file
+appendix/run_fixed_budget.py:36:1: E402 Module level import not at top of file
+appendix/run_fixed_budget.py:37:1: E402 Module level import not at top of file
+appendix/verify_fixed_budget.py:19:1: E402 Module level import not at top of file
+appendix1/resume_evaluation.py:13:1: E402 Module level import not at top of file
+appendix1/run_evaluation.py:21:1: E402 Module level import not at top of file
+appendix1/run_evaluation.py:21:39: F401 [*] `scripts.q1_1.localization.fy_position` imported but unused
+appendix1/run_evaluation.py:22:1: E402 Module level import not at top of file
+appendix1/run_evaluation.py:23:1: E402 Module level import not at top of file
+appendix1/run_evaluation.py:24:1: E402 Module level import not at top of file
+appendix1/run_evaluation.py:25:1: E402 Module level import not at top of file
+appendix1/run_evaluation.py:27:1: E402 Module level import not at top of file
+appendix1/test_semantics.py:14:1: E402 Module level import not at top of file
+appendix1/test_semantics.py:15:1: E402 Module level import not at top of file
+appendix1/test_semantics.py:16:1: E402 Module level import not at top of file
+appendix1/test_semantics.py:17:1: E402 Module level import not at top of file
+appendix1/test_semantics.py:18:1: E402 Module level import not at top of file
+appendix1/verify_evaluation.py:18:1: E402 Module level import not at top of file
+appendix1/verify_evaluation.py:19:1: E402 Module level import not at top of file
+appendix1/verify_evaluation.py:21:1: E402 Module level import not at top of file
+Found 25 errors.
+[*] 4 fixable with the `--fix` option.

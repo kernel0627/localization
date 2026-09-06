@@ -1,0 +1,24 @@
+{
+  "coverage": {
+    "random_rows": 1600,
+    "expected_random_rows": 1600,
+    "table1_rows": 16,
+    "expected_table1_rows": 16,
+    "missing_groups": [],
+    "incomplete_trial_ids": {},
+    "duplicates": [],
+    "unknown_gain_condition": [],
+    "full_16x100_coverage": true,
+    "missing_table1_keys": [],
+    "duplicate_table1_keys": []
+  },
+  "statistics": "Wilson 95% intervals; NumPy linear quantiles; gain and main contrasts bootstrap independent paired trial ids",
+  "figures": [
+    "terminal_error_gain",
+    "precision_stop_rate",
+    "exact_paired_slots",
+    "main_common_three_way",
+    "theory_empirical"
+  ],
+  "all_passed": true
+}
